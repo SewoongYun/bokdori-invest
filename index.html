@@ -1,0 +1,1896 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>복돌이의 투자 교실</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+/* ============================================================
+   디자인 시스템
+   ============================================================ */
+:root{
+  --bg:#FAF8F4;--card:#FFFFFF;--soft:#F6F3EE;--ink:#253046;--muted:#606A7A;--faint:#8A93A3;--line:#E8E5DF;
+  --mint:#DDF5ED;--mint-ink:#1F7A5C;--mint-mid:#7FD1B5;
+  --coral:#FF8A8F;--coral-soft:#FFEDEE;--peach:#FBE5D8;--butter:#FFF1C9;--lav:#EEE9FC;--sky:#E4F0FB;
+  --primary:#C83F50;--primary-dark:#A92F40;
+  --navy:#253046;--blue:#4C7BD9;--green:#2E9E7E;--red:#D9465A;--purple:#7C5CE0;--orange:#E8913A;
+  --up:#D63A4A;--down:#2F63D6;
+  --radius:20px;--radius-sm:14px;
+  --shadow:0 1px 2px rgba(37,48,70,.04),0 6px 18px rgba(37,48,70,.06);
+  --shadow-hover:0 2px 4px rgba(37,48,70,.06),0 12px 28px rgba(37,48,70,.10);
+  --nav-h:62px;
+  --head:'Jua',Pretendard,"Malgun Gothic",sans-serif;
+  --body:Pretendard,-apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  --pig:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><ellipse cx='60' cy='112' rx='30' ry='4' fill='%23253046' opacity='.08'/><rect x='36' y='86' width='13' height='20' rx='6.5' fill='%23F4A3B3'/><rect x='71' y='86' width='13' height='20' rx='6.5' fill='%23F4A3B3'/><path d='M27 44 Q22 22 29 16 Q42 21 50 31Z' fill='%23F4A3B3'/><path d='M93 44 Q98 22 91 16 Q78 21 70 31Z' fill='%23F4A3B3'/><path d='M31 38 Q29 27 32 24 Q39 28 43 32Z' fill='%23FFD6DE'/><path d='M89 38 Q91 27 88 24 Q81 28 77 32Z' fill='%23FFD6DE'/><ellipse cx='60' cy='62' rx='40' ry='37' fill='%23FFC7D1'/><ellipse cx='60' cy='80' rx='34' ry='17' fill='%23FFB9C6' opacity='.55'/><ellipse cx='50' cy='38' rx='15' ry='6' fill='%23fff' opacity='.5'/><rect x='51' y='27' width='18' height='4' rx='2' fill='%23E4899A'/><circle cx='44' cy='58' r='4.4' fill='%23253046'/><circle cx='76' cy='58' r='4.4' fill='%23253046'/><circle cx='45.5' cy='56.5' r='1.5' fill='%23fff'/><circle cx='77.5' cy='56.5' r='1.5' fill='%23fff'/><ellipse cx='32' cy='70' rx='7' ry='4.5' fill='%23FF8FA3' opacity='.45'/><ellipse cx='88' cy='70' rx='7' ry='4.5' fill='%23FF8FA3' opacity='.45'/><ellipse cx='60' cy='72' rx='14.5' ry='10.5' fill='%23FFA3B5'/><ellipse cx='55' cy='72' rx='2.5' ry='3.6' fill='%23C2566B'/><ellipse cx='65' cy='72' rx='2.5' ry='3.6' fill='%23C2566B'/><path d='M54 87 Q60 91 66 87' fill='none' stroke='%23C2566B' stroke-width='2.4' stroke-linecap='round'/><circle cx='60' cy='13' r='9' fill='%23FFD66B' stroke='%23E3A33A' stroke-width='2.4'/><path d='M60 9v8' stroke='%23E3A33A' stroke-width='2.2' stroke-linecap='round'/></svg>");
+  --scene:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 160'><path d='M10 148 H270' stroke='%23253046' stroke-opacity='.12' stroke-width='3' stroke-linecap='round'/><g fill='%23FFD66B' stroke='%23E3A33A' stroke-width='2.2'><ellipse cx='40' cy='140' rx='22' ry='7'/><ellipse cx='40' cy='130' rx='22' ry='7'/><ellipse cx='40' cy='120' rx='22' ry='7'/><ellipse cx='66' cy='140' rx='16' ry='6'/><ellipse cx='66' cy='131' rx='16' ry='6'/></g><g fill='%23FFD66B'><path d='M58 28 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z' opacity='.9'/><path d='M228 22 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2 l5 -2z'/></g><rect x='196' y='108' width='16' height='38' rx='4' fill='%23A8E2CF'/><rect x='218' y='88' width='16' height='58' rx='4' fill='%237FD1B5'/><rect x='240' y='64' width='16' height='82' rx='4' fill='%234FB896'/><path d='M190 96 L218 72 L232 80 L256 48' fill='none' stroke='%232E9E7E' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><path d='M244 46 L258 45 L256 59' fill='none' stroke='%232E9E7E' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><g transform='translate(82 24) scale(1)'><ellipse cx='60' cy='112' rx='30' ry='4' fill='%23253046' opacity='.08'/><rect x='36' y='86' width='13' height='20' rx='6.5' fill='%23F4A3B3'/><rect x='71' y='86' width='13' height='20' rx='6.5' fill='%23F4A3B3'/><path d='M27 44 Q22 22 29 16 Q42 21 50 31Z' fill='%23F4A3B3'/><path d='M93 44 Q98 22 91 16 Q78 21 70 31Z' fill='%23F4A3B3'/><ellipse cx='60' cy='62' rx='40' ry='37' fill='%23FFC7D1'/><ellipse cx='60' cy='80' rx='34' ry='17' fill='%23FFB9C6' opacity='.55'/><ellipse cx='50' cy='38' rx='15' ry='6' fill='%23fff' opacity='.5'/><rect x='51' y='27' width='18' height='4' rx='2' fill='%23E4899A'/><circle cx='44' cy='58' r='4.4' fill='%23253046'/><circle cx='76' cy='58' r='4.4' fill='%23253046'/><circle cx='45.5' cy='56.5' r='1.5' fill='%23fff'/><circle cx='77.5' cy='56.5' r='1.5' fill='%23fff'/><ellipse cx='32' cy='70' rx='7' ry='4.5' fill='%23FF8FA3' opacity='.45'/><ellipse cx='88' cy='70' rx='7' ry='4.5' fill='%23FF8FA3' opacity='.45'/><ellipse cx='60' cy='72' rx='14.5' ry='10.5' fill='%23FFA3B5'/><ellipse cx='55' cy='72' rx='2.5' ry='3.6' fill='%23C2566B'/><ellipse cx='65' cy='72' rx='2.5' ry='3.6' fill='%23C2566B'/><path d='M54 87 Q60 91 66 87' fill='none' stroke='%23C2566B' stroke-width='2.4' stroke-linecap='round'/></g></svg>");
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;word-break:keep-all;overflow-wrap:break-word;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.35;margin:0;font-weight:800}
+h1,h2,.ttl{font-family:var(--head);font-weight:400}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--blue)}
+b,strong{font-weight:700}
+:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:8px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:10px;z-index:100}
+.skip:focus{left:12px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* 마스코트 */
+.pig{background:var(--pig) center/contain no-repeat;display:inline-block}
+.scene{background:var(--scene) center/contain no-repeat}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- 헤더 & 메뉴 ---------- */
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.brand{max-width:1240px;margin:0 auto;display:flex;gap:12px;align-items:center;padding:12px 20px}
+.logo{width:46px;height:46px;flex:none}
+.brand-txt{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;min-width:0}
+.brand h1{font-size:24px;color:var(--ink)}
+.brand p{margin:0;font-size:14px;color:var(--muted);padding-left:14px;border-left:1px solid var(--line)}
+.tabs{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(37,48,70,.03)}
+.tabs-in{max-width:1240px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:0 14px;scrollbar-width:none;height:var(--nav-h);align-items:stretch}
+.tabs-in::-webkit-scrollbar{display:none}
+.tabs button{position:relative;display:flex;align-items:center;gap:8px;border:0;background:transparent;padding:0 14px;font-weight:700;font-size:15px;color:var(--muted);white-space:nowrap;cursor:pointer;border-radius:12px 12px 0 0;min-height:44px;transition:color .15s,background .15s}
+.tabs button:hover{color:var(--ink);background:var(--soft)}
+.tabs button.on{color:var(--primary);background:var(--coral-soft)}
+.tabs button.on::after{content:'';position:absolute;left:10px;right:10px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--coral)}
+main{max-width:1240px;margin:0 auto;padding:28px 20px 72px}
+.tab{display:none}
+.tab.active{display:block;animation:pop .25s ease}
+
+/* ---------- 공통 블록 ---------- */
+.sec-head{margin-bottom:22px}
+.kicker{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--mint-ink);background:var(--mint);padding:3px 12px;border-radius:999px}
+.sec-head h2{font-size:32px;margin:10px 0 4px;color:var(--ink)}
+.sec-head p{margin:0;color:var(--muted);font-size:16.5px;max-width:760px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);min-width:0}
+.panel+.panel{margin-top:18px}
+.panel h3{font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.step{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:800;flex:none;font-family:var(--body)}
+.sub{font-size:13.5px;font-weight:600;color:var(--faint)}
+.lab{display:grid;grid-template-columns:340px minmax(0,1fr);gap:22px;align-items:start;margin-bottom:24px}
+.lab>aside{position:sticky;top:calc(var(--nav-h) + 16px);max-height:calc(100vh - var(--nav-h) - 32px);overflow-y:auto;scrollbar-width:thin;overscroll-behavior:contain}
+.col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.col>.panel+.panel{margin-top:0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:22px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.chart{width:100%;height:340px;display:block;touch-action:pan-y}
+.chart.sm{height:230px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--muted);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:18px;height:4px;border-radius:3px;display:inline-block}
+.legend i.dash{background:repeating-linear-gradient(90deg,currentColor 0 5px,transparent 5px 8px)!important;height:3px}
+.legend i.band{height:12px;width:18px;border-radius:4px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--soft);border:1px solid transparent;border-radius:var(--radius-sm);padding:12px 14px;min-width:0}
+.stat small{color:var(--muted);display:block;font-size:13px;font-weight:600;line-height:1.4}
+.stat b{font-size:19px;font-weight:800;display:block;font-variant-numeric:tabular-nums;line-height:1.35;margin-top:4px;letter-spacing:-.02em;white-space:nowrap}
+.stat em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.stat.hl{background:var(--mint);border-color:#BDE9D9}
+.stat.hl b{color:var(--mint-ink)}
+.insight{background:#FBFAF7;border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 16px;margin-top:16px;font-size:15px;color:#3A4459}
+.insight b,.say b{background:linear-gradient(transparent 62%,#FFE59A 62%);color:var(--ink)}
+.say,.insight.say{display:flex;gap:14px;align-items:flex-start;background:#F5FBF8;border:1px solid #CDEBDF;border-radius:var(--radius-sm);padding:14px 16px;margin-top:16px;font-size:15px;color:#33405A}
+.insight.say{display:block;position:relative;padding-left:76px;min-height:76px}
+.insight.say::before{content:'';position:absolute;left:16px;top:14px;width:46px;height:46px;background:var(--pig) center/contain no-repeat}
+.insight.say p{margin:2px 0 0}
+.say>.pig{width:46px;height:46px;flex:none}
+.say p{margin:2px 0 0}
+.say-name{display:block;font-size:13px;font-weight:800;color:var(--mint-ink);background:none!important}
+.mathbox{background:#F7F5FE;border:1px solid #DDD5F7;border-radius:var(--radius);padding:4px 20px;margin-top:22px}
+.mathbox>summary{cursor:pointer;font-weight:800;font-size:16px;color:#5A44B8;list-style:none;display:flex;align-items:center;gap:10px;min-height:52px}
+.mathbox>summary::-webkit-details-marker{display:none}
+.mathbox>summary::after{content:'펼치기';font-size:12.5px;font-weight:700;background:#fff;border:1px solid #DDD5F7;border-radius:999px;padding:3px 12px;margin-left:auto;color:#5A44B8}
+.mathbox[open]>summary::after{content:'접기'}
+.mathbox[open]{padding-bottom:16px}
+.mathbox h4{font-size:16px;margin:6px 0 8px;color:#5A44B8}
+.mathbox p{margin:8px 0}
+.f{font-family:"Cambria Math","Times New Roman",serif;font-size:17px;background:#fff;border:1px solid #DDD5F7;border-radius:10px;padding:6px 14px;display:inline-block;margin:4px 0;max-width:100%;overflow-x:auto}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:999px;background:var(--soft);color:var(--muted);vertical-align:middle}
+.pill.book{background:var(--butter);color:#7A5A00}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--primary);background:var(--primary);color:#fff;border-radius:var(--radius-sm);padding:10px 18px;min-height:44px;font-weight:800;font-size:15.5px;cursor:pointer;box-shadow:0 4px 12px rgba(200,63,80,.22);transition:background .15s,transform .1s,box-shadow .15s}
+.btn:hover{background:var(--primary-dark)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:none}
+.btn.ghost:hover{background:var(--soft)}
+.btn.big{font-size:18px;padding:13px 20px;width:100%;min-height:54px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;min-height:40px;font-size:14.5px;font-weight:700;cursor:pointer;color:#3A4459;transition:.15s}
+.chip:hover{border-color:var(--mint-mid);background:#F5FBF8}
+.chip.on{background:var(--mint);border-color:var(--mint-mid);color:var(--mint-ink)}
+
+/* 입력 요소 */
+.sl{display:block;margin-bottom:14px}
+.sl-top{display:flex;justify-content:space-between;align-items:center;font-size:14.5px;gap:8px;font-weight:600}
+.sl-top output,.arow output{font-weight:800;color:var(--ink);background:var(--soft);border-radius:8px;padding:1px 8px;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:14.5px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:0;cursor:pointer;--fill:#FF8A8F}
+input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(90deg,var(--fill) var(--p,50%),#ECE8E1 var(--p,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;margin-top:-8px;border-radius:50%;background:#fff;border:3px solid var(--fill);box-shadow:0 2px 6px rgba(37,48,70,.18);transition:transform .1s}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12)}
+input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:#ECE8E1}
+input[type=range]::-moz-range-progress{height:8px;border-radius:99px;background:var(--fill)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--fill)}
+input[type=range]:focus-visible{outline:none}
+input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(200,63,80,.3)}
+.ctl-title{font-size:13px;font-weight:800;color:var(--faint);letter-spacing:.04em;margin:4px 0 10px}
+.ctl-sep{border:0;border-top:1px solid var(--line);margin:16px 0}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;margin-bottom:10px;cursor:pointer;background:var(--soft);border-radius:12px;padding:10px 12px;min-height:44px}
+.check input{margin-top:4px;width:18px;height:18px;accent-color:var(--primary);flex:none}
+.check small{display:block;color:var(--muted);font-size:12.5px}
+.inline{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:15px}
+.num{width:110px;border:1px solid #D9D5CD;border-radius:12px;padding:8px 12px;min-height:44px;background:#fff;font-variant-numeric:tabular-nums}
+.num:focus{border-color:var(--mint-mid);outline:none;box-shadow:0 0 0 3px var(--mint)}
+select.num{width:auto;cursor:pointer}
+.hint{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+
+/* 자산 배분 슬라이더 */
+.alloc-help{font-size:12.5px;color:var(--muted);background:var(--soft);border-radius:10px;padding:8px 10px;margin:0 0 10px}
+.arow{display:grid;grid-template-columns:30px 86px minmax(0,1fr) 50px;grid-template-areas:"ic nm sl pc";column-gap:8px;align-items:center;padding:3px 0}
+.arow .a-ic{grid-area:ic;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:15px;background:color-mix(in srgb,var(--c) 16%,#fff)}
+.arow .a-nm{grid-area:nm;font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arow input[type=range]{height:44px}
+.sl{margin-bottom:8px}
+@media (pointer:coarse){.underline-list .go,.chip{min-height:44px}}
+.game-lab #g-next{position:sticky;bottom:0;z-index:2;box-shadow:0 -10px 16px 4px #fff,0 4px 12px rgba(200,63,80,.25)}
+.arow output{grid-area:pc;text-align:center}
+.arow input{grid-area:sl}
+.stack-wrap{display:flex;align-items:center;gap:10px;margin:12px 0 2px}
+.stack-wrap>b{font-size:13px;color:var(--muted);flex:none}
+.stack{flex:1;display:flex;height:22px;border-radius:8px;overflow:hidden;background:#ECE8E1;min-width:0}
+.stack span{height:100%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;overflow:hidden;white-space:nowrap}
+.stack-total{font-weight:800;font-size:14px;color:var(--mint-ink);flex:none}
+.dot{width:12px;height:12px;border-radius:4px;display:inline-block;flex:none}
+
+/* 표 */
+table.t{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+.t th,.t td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle}
+.t th:first-child,.t td:first-child{text-align:left}
+.t thead th{background:var(--soft);font-size:13px;color:var(--muted);font-weight:700;white-space:nowrap}
+.t thead th:first-child{border-radius:10px 0 0 10px}.t thead th:last-child{border-radius:0 10px 10px 0}
+.t tr.best td{background:#F2FBF7;font-weight:800}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* 섹션 구분 제목 */
+.part-head{display:flex;align-items:center;gap:12px;margin:34px 0 14px}
+.part-head .num-badge{display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 8px;border-radius:999px;background:var(--coral-soft);color:var(--primary);font-weight:800;font-size:14px}
+.part-head h3{font-size:21px;font-family:var(--head);font-weight:400}
+.part-head p{margin:0;color:var(--muted);font-size:14.5px}
+.part-head::after{content:'';flex:1;height:1px;background:var(--line);min-width:20px}
+.part-head .ph-txt{display:flex;flex-direction:column}
+
+/* ---------- 시작 화면 ---------- */
+.welcome{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:center;background:linear-gradient(135deg,#E8F7F1 0%,#FDF7EE 100%);border:1px solid #D7EFE5;border-radius:28px;padding:30px 34px;margin-bottom:8px;overflow:hidden}
+.welcome .hello{font-size:16.5px;margin:12px 0 10px;color:#33405A}
+.quote{margin:0;background:#fff;border-radius:18px;padding:16px 20px;font-family:var(--head);font-size:24px;line-height:1.5;box-shadow:var(--shadow);position:relative}
+.quote mark{background:linear-gradient(transparent 58%,#FFD6D9 58%);color:inherit}
+.welcome .src{font-size:13.5px;color:var(--muted);margin:10px 0 6px}
+.welcome .lead{margin:0 0 16px;color:#33405A}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.welcome .scene{width:100%;aspect-ratio:280/160;max-width:420px;justify-self:center}
+.missions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mission{display:flex;flex-direction:column;align-items:flex-start;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s;min-height:44px}
+.mission:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:#D9D5CD}
+.m-ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:var(--c,var(--soft))}
+.mission h4{font-size:17px;margin:12px 0 4px}
+.mission p{margin:0 0 12px;font-size:14px;color:var(--muted);flex:1}
+.m-go{font-size:13.5px;font-weight:800;color:var(--primary)}
+.home-bottom{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+.underline-list{list-style:none;padding:0;margin:0}
+.underline-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;align-items:center}
+.underline-list li:last-child{border-bottom:0}
+.underline-list .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--coral-soft);color:var(--primary);display:grid;place-items:center;font-size:12.5px;font-weight:800}
+.underline-list .go{margin-left:auto;flex:none;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;min-height:36px;cursor:pointer;font-weight:700;color:var(--ink);white-space:nowrap}
+.underline-list .go:hover{background:var(--mint);border-color:var(--mint-mid)}
+.book-card{background:var(--butter)!important;border-color:#F3E2A6!important}
+.book-card .book{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.book-card .book .pig{width:54px;height:54px;flex:none}
+.epigraph{font-size:15px;border-left:3px solid var(--coral);padding-left:12px;color:#4A5468;margin:0}
+.teacher{margin-top:22px}
+.teacher>summary{cursor:pointer;font-weight:800;list-style:none;display:flex;align-items:center;gap:8px;min-height:32px}
+.teacher>summary::-webkit-details-marker{display:none}
+.teacher>summary::after{content:'펼치기';margin-left:auto;font-size:12.5px;background:var(--soft);border-radius:999px;padding:3px 12px;color:var(--muted)}
+.teacher[open]>summary::after{content:'접기'}
+
+/* ---------- 용어 사전 ---------- */
+.dict-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.search-wrap{position:relative;flex:1;min-width:220px}
+.search-wrap .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--faint)}
+.search{width:100%;border:1px solid #D9D5CD;border-radius:14px;padding:12px 16px 12px 44px;background:#fff;font-size:16px;min-height:48px}
+.search:focus{outline:none;border-color:var(--mint-mid);box-shadow:0 0 0 3px var(--mint)}
+.dict-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.term{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);align-self:start;transition:box-shadow .15s,border-color .15s}
+.term:hover{box-shadow:var(--shadow-hover)}
+.term summary{list-style:none;cursor:pointer;padding:16px 18px;border-radius:18px}
+.term summary::-webkit-details-marker{display:none}
+.term .tt{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.term .tt b{font-size:18px;font-weight:800}
+.term .tt i{font-style:normal;color:var(--faint);font-size:13px}
+.term .easy{margin:8px 0 0;font-size:15px;color:#3A4459}
+.term .tap{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:700;color:var(--primary)}
+.term[open] .tap{display:none}
+.term .more{padding:12px 18px 16px;font-size:14.5px;border-top:1px solid var(--line)}
+.term .more p{margin:8px 0 0}
+.term .more p:first-child{margin-top:0}
+.term .lbl{display:inline-block;font-size:12px;font-weight:800;background:var(--soft);border-radius:6px;padding:0 7px;margin-right:6px;color:var(--muted)}
+.term .mth{background:#F7F5FE;border-radius:10px;padding:8px 12px}
+.term[open]{border-color:#CFEBDF}
+.term .cat{font-size:12px;font-weight:700;margin-left:auto;border-radius:999px;padding:1px 10px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.term[data-cat="주식 기초"] .cat{background:var(--coral-soft);color:#A7364A}
+.term[data-cat="펀드 · ETF"] .cat{background:var(--sky);color:#2F5E99}
+.term[data-cat="채권 · 금리"] .cat{background:var(--mint);color:var(--mint-ink)}
+.term[data-cat="위험 · 분산"] .cat{background:var(--lav);color:#5A44B8}
+.term[data-cat="연금 · 세금"] .cat{background:var(--peach);color:#9A4D24}
+.term[data-cat="파생상품"] .cat{background:var(--butter);color:#7A5A00}
+
+/* ---------- 투자 인생 게임 ---------- */
+.game-hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:center;background:linear-gradient(135deg,#E8F7F1 0%,#FFF6EC 100%);border:1px solid #D7EFE5;border-radius:28px;padding:24px 30px;margin-bottom:22px;transition:padding .2s}
+.game-hero h2{font-size:36px;display:flex;align-items:center;gap:12px}
+.game-hero h2 .ic{width:40px;height:40px;color:var(--coral);stroke-width:2}
+.game-hero p{margin:8px 0 0;font-size:17px;color:#33405A}
+.game-hero .scene{width:100%;aspect-ratio:280/160}
+#game.playing .game-hero{grid-template-columns:minmax(0,1fr) 150px;padding:12px 22px}
+#game.playing .game-hero h2{font-size:26px}
+#game.playing .game-hero h2 .ic{width:30px;height:30px}
+#game.playing .game-hero p{display:none}
+.setup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start}
+.setup-card{border:2px solid #CDEBDF!important}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field label{font-weight:800;font-size:15px}
+.field .num,.field select{width:100%;font-size:16px}
+.field small{font-size:12.5px;color:var(--muted)}
+.rules{margin:0;padding:0;list-style:none;counter-reset:r}
+.rules li{counter-increment:r;display:flex;gap:12px;align-items:flex-start;padding:8px 0;font-size:15.5px}
+.rules li::before{content:counter(r);flex:none;width:26px;height:26px;border-radius:50%;background:var(--coral-soft);color:var(--primary);font-weight:800;font-size:13px;display:grid;place-items:center;margin-top:1px}
+.ghosts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.ghost-card{background:var(--soft);border-radius:var(--radius-sm);padding:10px 12px;font-size:13.5px;color:var(--muted)}
+.ghost-card b{display:block;color:var(--ink);font-size:14.5px}
+.more-rules{margin-top:6px;border-top:1px solid var(--line);padding-top:8px}
+.more-rules>summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--primary);min-height:36px;display:flex;align-items:center}
+.more-rules ul{margin:6px 0 0;padding-left:20px;font-size:14.5px;color:#3A4459}
+.card-title{font-family:var(--head);font-weight:400!important;font-size:21px!important}
+.card-title .ic{color:var(--coral);width:22px;height:22px}
+.agebar{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:8px}
+.agebar small{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+.agebar b{font-size:26px;font-weight:800;line-height:1.2}
+.agebar .turn{text-align:right}
+.agebar .turn b{font-size:17px}
+.progress{height:10px;background:#ECE8E1;border-radius:99px;overflow:hidden;margin-bottom:18px}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--coral),#FFB4A2);border-radius:99px;transition:width .4s}
+.g-last{font-size:14px;color:#3A4459;background:var(--soft);border-radius:12px;padding:8px 12px;margin:10px 0}
+.g-last:empty{display:none}
+.game-right{display:flex;flex-direction:column;gap:18px;min-width:0}
+.game-right>.panel+.panel{margin-top:0}
+.game-right #g-endwrap{order:0}.game-right .journey{order:1}.game-right #g-event{order:2}.game-right .diary{order:3}
+.ev-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.ev-tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:var(--primary);background:var(--coral-soft);padding:3px 12px;border-radius:999px}
+.ev-age{font-size:13px;font-weight:700;color:var(--muted)}
+.ev-title{font-size:22px!important;margin:0 0 4px!important}
+.ev-desc{margin:0 0 14px;color:#3A4459}
+.ev-rets{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.ev-ret{background:var(--soft);border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;gap:2px}
+.ev-ret .nm{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.ev-ret b{font-size:17px;font-variant-numeric:tabular-nums}
+.ev-mine{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.ev-mine>div{flex:1;min-width:140px;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.ev-mine>div.me{background:var(--mint);border-color:#BDE9D9}
+.ev-mine small{display:block;font-size:12.5px;color:var(--muted);font-weight:700}
+.ev-mine b{font-size:24px;font-variant-numeric:tabular-nums}
+.warn{background:#FFF0F1;border:1px solid #F8CDD2;border-radius:12px;padding:10px 14px;font-size:14.5px;margin-top:12px;color:#7A2733}
+.up{color:var(--up)}.down{color:var(--down)}
+.lesson{background:#FBFAF7;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px;margin-top:10px}
+.log{max-height:320px;overflow:auto}
+.log .t{font-size:13.5px}
+.log .t td:nth-child(2){text-align:left}
+.endcard{border:2px solid #F3E2A6!important;background:linear-gradient(180deg,#FFFBEF,#fff 60%)!important}
+.end-head{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.end-head .pig{width:64px;height:64px;flex:none}
+.end-head h3{font-size:24px!important;margin:4px 0 2px!important;font-family:var(--head);font-weight:400}
+.end-head p{margin:0;color:var(--muted)}
+.rank{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:8px}
+.rank li{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.rank li.me{border-color:var(--mint-mid);background:var(--mint)}
+.rank .medal{font-size:22px}
+.rank .who{font-weight:700}
+.rank b{margin-left:auto;font-size:18px;font-variant-numeric:tabular-nums}
+.end-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:12px}
+.mini{background:var(--soft);border-radius:12px;padding:10px 12px}
+.mini small{display:block;font-size:12.5px;color:var(--muted);font-weight:700}
+.mini b{display:block;font-size:15px}
+.mini em{font-style:normal;font-size:13px;font-weight:800}
+.end-msgs{margin:0 0 12px;padding-left:20px}
+.end-msgs li{margin-bottom:4px}
+.share{background:#fff;border:1px dashed #D9D5CD;border-radius:12px;padding:10px 14px;font-size:14px}
+.think{margin:12px 0 0;font-size:14.5px;color:#3A4459}
+
+/* ---------- 연금 ---------- */
+.floors{display:flex;flex-direction:column;gap:8px}
+.floor{border-radius:14px;padding:10px 16px;color:var(--ink)}
+.floor b{display:block;font-size:15.5px}
+.floor small{font-size:13.5px;color:#4A5468}
+.waterfall .row{display:grid;grid-template-columns:130px minmax(0,1fr) 100px;gap:10px;align-items:center;font-size:14.5px;margin-bottom:8px}
+.waterfall .bar{height:20px;border-radius:6px}
+
+/* ---------- 퀴즈 ---------- */
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.q h4{font-size:17px;margin-bottom:12px;line-height:1.5}
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid #DDD9D1;background:#fff;border-radius:999px;padding:10px 18px;min-height:48px;cursor:pointer;font-size:15.5px;transition:.12s}
+.opt:hover:not(:disabled){background:#F5FBF8;border-color:var(--mint-mid)}
+.opt:disabled{cursor:default;color:#7A8293}
+.opt.right{background:var(--mint);border-color:var(--mint-mid);color:var(--mint-ink);font-weight:800}
+.opt.wrong{background:#FFF0F1;border-color:#F3B5BD;color:#A7364A;font-weight:700}
+.opt.right::after{content:'✓ 정답';margin-left:auto;font-size:13px;font-weight:800;background:#fff;border-radius:999px;padding:2px 10px;flex:none}
+.opt.wrong::after{content:'✕ 내가 고른 답';margin-left:auto;font-size:13px;font-weight:800;background:#fff;border-radius:999px;padding:2px 10px;flex:none}
+.explain{margin-top:12px;font-size:15px;background:#FBFAF7;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.score{position:sticky;top:calc(var(--nav-h) + 10px);z-index:5;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;box-shadow:var(--shadow);font-weight:700}
+.score b{font-size:22px;color:var(--primary)}
+.ws-q{margin:16px 0 6px;font-weight:700}
+textarea{width:100%;min-height:96px;border:1px solid #D9D5CD;border-radius:12px;padding:12px;background:#fff;resize:vertical;font-size:15px;line-height:1.6}
+textarea:focus{outline:none;border-color:var(--mint-mid);box-shadow:0 0 0 3px var(--mint)}
+.print-only{display:none}
+
+.confetti{position:fixed;top:-40px;font-size:26px;pointer-events:none;z-index:99;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+
+footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;font-size:13px;color:var(--muted)}
+
+/* ---------- 반응형 ---------- */
+@media (max-width:1100px){
+  .lab{grid-template-columns:300px minmax(0,1fr)}
+  .missions{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .game-hero{grid-template-columns:minmax(0,1fr) 220px}
+}
+@media (max-width:900px){
+  .lab{grid-template-columns:1fr}
+  .lab>aside{position:static;max-height:none;overflow:visible}
+  .setup,.home-bottom{grid-template-columns:1fr}
+  .welcome{grid-template-columns:1fr;padding:24px}
+  .welcome .scene{max-width:300px;order:-1}
+}
+@media (max-width:768px){
+  :root{--nav-h:64px}
+  .brand{padding:10px 16px}
+  .brand p{display:none}
+  .tabs-in{padding:0 8px;gap:2px}
+  .tabs button{flex:0 0 auto;flex-direction:column;justify-content:center;gap:3px;font-size:11.5px;line-height:1.15;padding:5px 4px;width:74px;white-space:normal;text-align:center;word-break:keep-all;border-radius:12px;margin:4px 0}
+  .tabs button .ic{width:20px;height:20px}
+  .tabs button.on::after{bottom:-6px;left:16px;right:16px}
+  .tabs::after{content:'';position:absolute;right:0;top:0;bottom:1px;width:28px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none}
+  main{padding:22px 14px 60px}
+  .sec-head h2{font-size:26px}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .game-hero{grid-template-columns:minmax(0,1fr) 120px;padding:18px 20px}
+  .game-hero h2{font-size:26px}
+  .game-hero h2 .ic{width:30px;height:30px}
+  .game-hero p{font-size:15px}
+  #game.playing .game-hero{grid-template-columns:minmax(0,1fr) 90px}
+  #game.playing .game-hero h2{font-size:21px}
+  .game-right #g-event{order:1}.game-right .journey{order:2}
+  .chart{height:280px}
+  .quote{font-size:20px}
+}
+@media (max-width:560px){
+  .missions{grid-template-columns:1fr}
+  .panel{padding:18px 16px;border-radius:18px}
+  .welcome{padding:20px 18px;border-radius:22px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat b{font-size:16.5px}
+  .ghosts{grid-template-columns:1fr}
+  .waterfall .row{grid-template-columns:86px minmax(0,1fr) 78px;font-size:13px}
+  .dict-grid{grid-template-columns:1fr}
+  .underline-list li{flex-wrap:wrap}
+  .brand h1{font-size:21px}
+  .logo{width:40px;height:40px}
+  .chart{height:260px}
+  .chart.sm{height:210px}
+  .part-head h3{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ---------- 인쇄 ---------- */
+@media print{
+  @page{margin:14mm}
+  html,body{background:#fff!important;color:#000!important;font-size:11.5pt}
+  .top,.tabs,.noprint,footer,.confetti,.skip{display:none!important}
+  .tab{display:none!important}.tab.active{display:block!important;animation:none}
+  .panel,.q,.term,.stat{box-shadow:none!important;background:#fff!important;border-color:#bbb!important;color:#000!important}
+  .q,.ws-block{break-inside:avoid;page-break-inside:avoid}
+  .opt{border-color:#bbb;color:#000!important;background:#fff!important;min-height:0;padding:4px 12px}
+  .opt.right{border:2px solid #000}
+  .score{position:static}
+  textarea{display:none!important}
+  .print-only{display:block!important}
+  .print-ans{white-space:pre-wrap;border:1px solid #999;border-radius:6px;min-height:70px;padding:8px 10px;font-size:11pt}
+  .sec-head p,.note{color:#333!important}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 10.5 12 4l8.5 6.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5c3-1.2 6-1 9 .8 3-1.8 6-2 9-.8v13c-3-1.2-6-1-9 .8-3-1.8-6-2-9-.8z"/><path d="M12 6.3v13"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M4.5 7.5h15"/><path d="M7 7.5 4 14a3 3 0 0 0 6 0z"/><path d="M17 7.5 14 14a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3.5h6M10 3.5v5.5L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9V3.5"/><path d="M7.3 14.5h9.4"/></symbol>
+  <symbol id="i-game" viewBox="0 0 24 24"><path d="M7 7.5h10a5 5 0 0 1 5 5v.5a4 4 0 0 1-7 2.6l-.8-.9H9.8l-.8.9A4 4 0 0 1 2 13v-.5a5 5 0 0 1 5-5z"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="15.5" cy="11.5" r=".9"/><circle cx="17.5" cy="13.5" r=".9"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 4a8.5 8.5 0 0 1 8.5 8.5h-17A8.5 8.5 0 0 1 12 4z"/><path d="M12 12.5v6a2 2 0 0 1-4 0"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20l4.2-1L19 8.2 15.8 5 5 15.8z"/><path d="M13.8 7l3.2 3.2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="brand">
+    <div class="logo pig" role="img" aria-label="복돌이"></div>
+    <div class="brand-txt">
+      <h1>복돌이의 투자 교실</h1>
+      <p>경제수학 · 투자 · 포트폴리오 · 연금 시뮬레이터 — 『연금 부자 수업』 독후감에서 출발한 수업</p>
+    </div>
+  </div>
+</header>
+<nav class="tabs" aria-label="학습 메뉴"><div class="tabs-in" id="tabs">
+  <button type="button" data-tab="home" class="on"><svg class="ic"><use href="#i-home"/></svg><span>시작</span></button>
+  <button type="button" data-tab="dict"><svg class="ic"><use href="#i-book"/></svg><span>주식 용어 사전</span></button>
+  <button type="button" data-tab="lab1"><svg class="ic"><use href="#i-scale"/></svg><span>저축 vs 투자</span></button>
+  <button type="button" data-tab="lab2"><svg class="ic"><use href="#i-flask"/></svg><span>포트폴리오 실험실</span></button>
+  <button type="button" data-tab="game"><svg class="ic"><use href="#i-game"/></svg><span>투자 인생 게임</span></button>
+  <button type="button" data-tab="pension"><svg class="ic"><use href="#i-sun"/></svg><span>연금 & 4% 룰</span></button>
+  <button type="button" data-tab="quiz"><svg class="ic"><use href="#i-pencil"/></svg><span>퀴즈 & 활동지</span></button>
+</div></nav>
+
+<main id="main">
+<!-- ======================= HOME ======================= -->
+<section id="home" class="tab active">
+  <div class="welcome">
+    <div>
+      <span class="kicker">오늘의 질문</span>
+      <p class="hello">안녕! 나는 돈을 불리는 저금통 <b>복돌이</b>야. 선생님 책에서 이런 문장을 봤어.</p>
+      <blockquote class="quote">“아무리 소득이 높아도 자산 가치가 오르는 속도가 너무 빨라서, <mark>저축만으로는 한계</mark>가 있다.”</blockquote>
+      <p class="src">📚 박곰희 『연금 부자 수업』(인플루엔셜) · 선생님 독후감 밑줄 #1</p>
+      <p class="lead">정말일까? 나랑 같이 <b>복리 · 포트폴리오 · 연금</b>을 직접 시뮬레이션해 보면서 답을 찾아보자!</p>
+      <div class="cta">
+        <button class="btn" type="button" data-goto="lab1">① 저축 vs 투자부터 시작하기</button>
+        <button class="btn ghost" type="button" data-goto="game">투자 인생 게임 바로 하기</button>
+      </div>
+    </div>
+    <div class="scene" role="img" aria-label="동전과 상승 그래프 옆의 복돌이"></div>
+  </div>
+
+  <div class="part-head"><span class="num-badge">1</span><div class="ph-txt"><h3>오늘의 미션</h3><p>어떤 활동부터 해볼까요?</p></div></div>
+  <div class="missions">
+    <button class="mission" type="button" data-goto="dict"><span class="m-ic" style="--c:var(--sky)">📖</span><h4>주식 용어 사전</h4><p>ETF, 배당, PER, 듀레이션, 커버드콜… 뉴스에 나오는 말들을 친절하게 풀었어요.</p><span class="m-go">살펴보기 →</span></button>
+    <button class="mission" type="button" data-goto="lab1"><span class="m-ic" style="--c:var(--mint)">🌱</span><h4>① 저축 vs 투자</h4><p>매달 30만원, 30년. 예금과 투자는 얼마나 달라질까? 물가까지 고려하면?</p><span class="m-go">실험하기 →</span></button>
+    <button class="mission" type="button" data-goto="lab2"><span class="m-ic" style="--c:var(--lav)">🧺</span><h4>② 포트폴리오 실험실</h4><p>자산을 섞어 1,000개의 미래를 시뮬레이션. 분산투자와 리밸런싱의 힘을 확인!</p><span class="m-go">실험하기 →</span></button>
+    <button class="mission" type="button" data-goto="game"><span class="m-ic" style="--c:var(--coral-soft)">🎲</span><h4>③ 투자 인생 게임</h4><p>25살 사회초년생이 되어 금융위기·금리 쇼크를 겪으며 1년씩 버텨보기.</p><span class="m-go">게임하기 →</span></button>
+    <button class="mission" type="button" data-goto="pension"><span class="m-ic" style="--c:var(--peach)">🏖️</span><h4>④ 연금 계좌 & 4% 룰</h4><p>같은 돈, 다른 계좌. 세금 혜택이 만드는 차이와 은퇴 후 꺼내 쓰는 법.</p><span class="m-go">계산하기 →</span></button>
+    <button class="mission" type="button" data-goto="quiz"><span class="m-ic" style="--c:var(--butter)">✏️</span><h4>퀴즈 & 활동지</h4><p>배운 내용 점검하고 ‘나의 투자 원칙’을 써서 인쇄·제출해요.</p><span class="m-go">풀어보기 →</span></button>
+  </div>
+
+  <div class="part-head"><span class="num-badge">2</span><div class="ph-txt"><h3>선생님의 밑줄</h3><p>독후감에서 뽑은 핵심 문장과 연결된 활동</p></div></div>
+  <div class="home-bottom">
+    <div class="panel">
+      <ul class="underline-list">
+        <li><span class="n">1</span><span>저축만으로는 자산 가치 상승 속도를 따라가기 어렵다</span><button class="go" type="button" data-goto="lab1">① 실험</button></li>
+        <li><span class="n">3</span><span>4% 룰 — 수익으로 소비한다</span><button class="go" type="button" data-goto="pension">④ 실험</button></li>
+        <li><span class="n">4</span><span>연금저축: 세액공제 + 과세이연 + 저율과세, 3단 혜택</span><button class="go" type="button" data-goto="pension">④ 실험</button></li>
+        <li><span class="n">6</span><span>ISA 만기 자금을 연금저축으로 옮기면 최대 300만원 추가 세액공제</span><button class="go" type="button" data-goto="pension">④ 계산</button></li>
+        <li><span class="n">12</span><span>매달 정기 적립 + 1년에 한 번 리밸런싱</span><button class="go" type="button" data-goto="lab2">② 실험</button></li>
+        <li><span class="n">13</span><span>TDF — 은퇴 시점에 맞춰 자동으로 운용되는 펀드</span><button class="go" type="button" data-goto="lab2">② 실험</button></li>
+        <li><span class="n">20</span><span>장기채권은 금리 변화에 민감하다 — 듀레이션</span><button class="go" type="button" data-goto="game">③ 체험</button></li>
+      </ul>
+    </div>
+    <div class="panel book-card">
+      <div class="book"><span class="pig" aria-hidden="true"></span><div><b>박곰희 『연금 부자 수업』</b><br><span class="hint">인플루엔셜 · 선생님의 2026 독후감</span></div></div>
+      <p class="epigraph">“좋은 책은 어떤 식으로든 삶에 영향을 주는 책들이다.” — 선생님의 독후감 중에서</p>
+      <p class="note">이 교실의 모든 활동은 독후감의 밑줄 친 문장에서 출발했어요. 사이트 곳곳의 <span class="pill book">📘 독후감 #</span> 표시를 찾아보세요.</p>
+    </div>
+  </div>
+
+  <details class="panel teacher">
+    <summary>👩‍🏫 선생님용 — 추천 수업 흐름 (2~3차시)</summary>
+    <div class="tablewrap" style="margin-top:12px">
+    <table class="t">
+      <thead><tr><th>차시</th><th style="text-align:left">활동</th><th style="text-align:left">수학 연결</th></tr></thead>
+      <tbody>
+        <tr><td>1차시</td><td style="text-align:left">도입: 독후감 문장 #1 제시 → ① 저축 vs 투자 → 용어 사전으로 기초 용어 정리</td><td style="text-align:left">등비수열의 합, 복리, 72의 법칙(로그)</td></tr>
+        <tr><td>2차시</td><td style="text-align:left">② 포트폴리오 실험실(모둠별 전략 비교) → ③ 투자 인생 게임 (<b>학급 공통 시드 번호</b>로 같은 시장을 경험하고 결과 비교)</td><td style="text-align:left">기댓값·분산·표준편차, 상관계수, 확률분포(히스토그램)</td></tr>
+        <tr><td>3차시</td><td style="text-align:left">④ 연금 계좌 비교 & 4% 룰 → 퀴즈 → 활동지 ‘나의 투자 원칙’ 작성·인쇄</td><td style="text-align:left">연금의 종가, 세율 계산, 듀레이션(미분 근사)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">팁: 주소 끝에 #game, #lab2 처럼 붙이면 해당 탭으로 바로 열려요. 게임의 시드 번호를 칠판에 적어주면 모든 학생이 똑같은 시장 상황을 겪게 됩니다.</p>
+  </details>
+</section>
+
+<!-- ======================= DICTIONARY ======================= -->
+<section id="dict" class="tab">
+  <div class="sec-head">
+    <span class="kicker">WORDS</span>
+    <h2>주식 용어 사전</h2>
+    <p>뉴스가 들리기 시작하는 단어들. 카드를 눌러 예시와 수학 연결까지 펼쳐보세요. <span class="pill book">📘 독후감 #</span> 표시는 선생님 독후감에 나온 개념이에요.</p>
+  </div>
+  <div class="dict-tools">
+    <label class="search-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="search" id="d-q" type="search" placeholder="용어 검색 (예: ETF, 배당, 듀레이션)" aria-label="용어 검색"></label>
+    <span id="d-count" class="note" style="margin:0"></span>
+  </div>
+  <div class="chips" id="d-cats"></div>
+  <div class="dict-grid" id="d-grid"></div>
+</section>
+
+<!-- ======================= LAB 1 ======================= -->
+<section id="lab1" class="tab">
+  <div class="sec-head">
+    <span class="kicker">LAB ①</span>
+    <h2>저축 vs 투자 — 복리와 물가의 줄다리기</h2>
+    <p>독후감 #1 “저축만으로는 한계가 있다” — 정말일까요? 숫자로 확인해 봅시다.</p>
+  </div>
+  <div class="lab">
+    <aside class="panel">
+      <h3><span class="step">1</span>조건 정하기</h3>
+      <label class="sl"><span class="sl-top"><span>매달 넣는 돈</span><output id="l1-m-o"></output></span><input type="range" id="l1-m" min="5" max="200" step="5" value="30"></label>
+      <label class="sl"><span class="sl-top"><span>기간</span><output id="l1-y-o"></output></span><input type="range" id="l1-y" min="5" max="45" step="1" value="30"></label>
+      <hr class="ctl-sep">
+      <label class="sl"><span class="sl-top"><span>🏦 예금 금리 (연)</span><output id="l1-d-o"></output></span><input type="range" id="l1-d" min="0" max="8" step="0.1" value="3" style="--fill:#2E9E7E"></label>
+      <label class="sl"><span class="sl-top"><span>📈 투자 수익률 (연평균)</span><output id="l1-i-o"></output></span><input type="range" id="l1-i" min="0" max="12" step="0.5" value="7" style="--fill:#E5566B"></label>
+      <label class="sl"><span class="sl-top"><span>🔥 물가상승률 (연)</span><output id="l1-f-o"></output></span><input type="range" id="l1-f" min="0" max="6" step="0.1" value="2.5" style="--fill:#7C5CE0"></label>
+      <p class="note">투자 수익률 7%는 ‘장기적으로 평균이 이 정도라면?’이라는 가정이에요. 실제 주식은 해마다 오르내려요 → ② 실험실에서 확인!</p>
+    </aside>
+    <div class="col">
+      <div class="panel">
+        <h3><span class="step">2</span>결과 한눈에 보기</h3>
+        <div class="cards" id="l1-cards"></div>
+        <canvas class="chart" id="l1-chart" aria-label="기간에 따른 원금, 예금, 투자 자산 그래프" role="img"></canvas>
+        <div class="legend" id="l1-legend"></div>
+        <div class="insight say" id="l1-insight"></div>
+      </div>
+    </div>
+  </div>
+  <details class="mathbox"><summary>📐 수학 시간! 공식으로 뜯어보기</summary><div id="l1-math"></div></details>
+</section>
+
+<!-- ======================= LAB 2 ======================= -->
+<section id="lab2" class="tab">
+  <div class="sec-head">
+    <span class="kicker">LAB ②</span>
+    <h2>포트폴리오 실험실 — 1,000개의 미래를 돌려보자</h2>
+    <p>자산 바구니(포트폴리오)를 직접 구성하면 컴퓨터가 무작위 시장을 1,000번 만들어 결과를 보여줘요. (몬테카를로 시뮬레이션)</p>
+  </div>
+  <div class="lab">
+    <aside class="panel">
+      <h3><span class="step">1</span>투자 조건과 자산 비중</h3>
+      <div class="ctl-title">바구니 구성 (자산 배분)</div>
+      <div class="chips" id="p-presets"></div>
+      <div id="p-alloc"></div>
+      <hr class="ctl-sep">
+      <div class="ctl-title">투자 방법</div>
+      <label class="sl"><span class="sl-top"><span>처음 넣는 돈</span><output id="p-init-o"></output></span><input type="range" id="p-init" min="0" max="5000" step="100" value="0"></label>
+      <label class="sl"><span class="sl-top"><span>매달 적립</span><output id="p-m-o"></output></span><input type="range" id="p-m" min="5" max="200" step="5" value="30"></label>
+      <label class="sl"><span class="sl-top"><span>기간</span><output id="p-y-o"></output></span><input type="range" id="p-y" min="5" max="40" step="1" value="30"></label>
+      <label class="check"><input type="checkbox" id="p-reb" checked><span><b>1년에 한 번 리밸런싱</b> <span class="pill book">📘 #12</span><small>오른 자산은 팔고 내린 자산은 사서 원래 비중으로 되돌리기</small></span></label>
+      <label class="check"><input type="checkbox" id="p-tdf"><span><b>TDF 방식</b> <span class="pill book">📘 #13</span><small>은퇴(마지막 해)가 가까워질수록 주식 비중을 자동으로 줄이고 채권을 늘림</small></span></label>
+      <hr class="ctl-sep">
+      <div class="inline"><label for="p-seed">시드 번호</label><input type="number" class="num" id="p-seed" value="2026"><button class="btn ghost" id="p-reroll" type="button">🎲 다른 미래</button></div>
+      <p class="hint">같은 시드 번호 = 같은 무작위 시장. 모둠끼리 같은 번호로 전략만 바꿔 비교해 보세요.</p>
+      <details style="margin-top:12px">
+        <summary style="cursor:pointer;font-size:13.5px;font-weight:700;min-height:36px;display:flex;align-items:center">⚙️ 자산별 가정 바꾸기</summary>
+        <div class="tablewrap"><table class="t" id="p-assume" style="margin-top:8px;font-size:13px"></table></div>
+        <p class="hint">교육용 가정치예요. 과거 장기 평균을 참고해 단순화했고, 미래 수익을 보장하지 않아요.</p>
+      </details>
+    </aside>
+    <div class="col">
+      <div class="panel">
+        <h3><span class="step">2</span>시뮬레이션 전에 수학으로 예측하기</h3>
+        <div class="cards" id="p-theory"></div>
+        <div class="insight" id="p-theory-txt" style="margin-top:0"></div>
+      </div>
+      <div class="panel">
+        <h3><span class="step">3</span>1,000개의 미래 — 핵심 결과</h3>
+        <div class="cards" id="p-cards"></div>
+        <h3 style="margin-top:6px"><span class="step">4</span>시간에 따른 자산 <span class="sub">그래프에 손가락·마우스를 올려 보세요</span></h3>
+        <canvas class="chart" id="p-chart" aria-label="1,000개 시뮬레이션의 분포와 중앙값 그래프" role="img"></canvas>
+        <div class="legend">
+          <span><i class="band" style="background:rgba(124,92,224,.13)"></i>10~90% 범위</span>
+          <span><i class="band" style="background:rgba(124,92,224,.30)"></i>25~75% 범위</span>
+          <span><i style="background:#253046;height:5px"></i>중앙값 (딱 중간인 미래)</span>
+          <span><i class="dash" style="color:#A3AAB6;background:#A3AAB6"></i>내가 낸 돈</span>
+          <span><i style="background:#FF8A8F;opacity:.75"></i>무작위로 뽑은 미래 3개</span>
+        </div>
+      </div>
+      <div class="grid2" style="margin:0">
+        <div class="panel">
+          <h3><span class="step">5</span>마지막 해 자산의 분포</h3>
+          <canvas class="chart sm" id="p-hist" aria-label="마지막 해 자산 분포 히스토그램" role="img"></canvas>
+          <p class="note">막대 하나 = 그 금액 구간에 도착한 미래의 수. 빨간 점선은 낸 돈(원금), 남색 선은 중앙값이에요.</p>
+        </div>
+        <div class="panel">
+          <h3><span class="step">6</span>전략 비교 <span class="sub">같은 시장, 다른 전략</span></h3>
+          <div class="tablewrap"><table class="t" id="p-compare"></table></div>
+          <p class="note">최대낙폭(MDD) = 고점 대비 가장 크게 떨어졌던 비율. 숫자가 클수록 ‘심장이 철렁한’ 순간이 컸다는 뜻.</p>
+        </div>
+      </div>
+      <div class="insight say" id="p-insight" style="margin-top:0"></div>
+    </div>
+  </div>
+  <details class="mathbox"><summary>📐 수학 시간! 포트폴리오의 기댓값과 분산</summary><div id="p-math"></div></details>
+</section>
+
+<!-- ======================= GAME ======================= -->
+<section id="game" class="tab">
+  <div class="game-hero">
+    <div>
+      <span class="kicker">GAME ③</span>
+      <h2><svg class="ic"><use href="#i-game"/></svg>투자 인생 게임</h2>
+      <p>25살, 첫 월급으로 시작하는 투자 여행! 매년 바구니 비중을 정하고 ‘1년 보내기’를 누르세요. 그해 시장에 무슨 일이 일어날지는 아무도 몰라요!</p>
+    </div>
+    <div class="scene" role="img" aria-label="동전과 상승 그래프 옆의 복돌이"></div>
+  </div>
+
+  <div class="setup" id="g-setup">
+    <div class="panel setup-card">
+      <h3 class="card-title"><svg class="ic"><use href="#i-cal"/></svg>게임 설정</h3>
+      <div class="field"><label for="g-seed">시드 번호</label><input type="number" class="num" id="g-seed" value="1234" inputmode="numeric"><small>선생님이 알려준 번호 — 같은 번호면 모든 친구가 똑같은 시장을 겪어요</small></div>
+      <div class="field"><label for="g-years">게임 기간</label>
+        <select class="num" id="g-years"><option value="10">10년 (25~34세)</option><option value="20" selected>20년 (25~44세)</option><option value="30">30년 (25~54세)</option></select></div>
+      <div class="field"><label for="g-monthly">매달 투자금</label>
+        <select class="num" id="g-monthly"><option value="300000">30만원</option><option value="500000" selected>50만원</option><option value="1000000">100만원</option></select></div>
+      <button class="btn big" id="g-start" type="button">▶ 게임 시작</button>
+    </div>
+    <div class="panel">
+      <h3 class="card-title">게임 규칙 한눈에</h3>
+      <ol class="rules">
+        <li><span>당신은 <b>25살 사회초년생</b>. 매년 초, 5가지 자산의 <b>비중</b>을 정해요.</span></li>
+        <li><span><b>1년 보내기</b>를 누르면 그해의 시장 뉴스와 자산별 수익률이 공개돼요.</span></li>
+        <li><span>두 명의 <b>유령 투자자</b>와 결과를 비교해요. 누가 더 현명했을까?</span></li>
+      </ol>
+      <div class="ghosts">
+        <div class="ghost-card"><b>👻 꾸준이</b>첫해 비중을 끝까지 유지 + 매년 리밸런싱</div>
+        <div class="ghost-card"><b>🏦 예금이</b>전부 예금</div>
+      </div>
+      <details class="more-rules">
+        <summary>자세한 규칙 보기</summary>
+        <ul>
+          <li>당신은 <b>25살 사회초년생</b>. 매달 일정 금액을 투자해요.</li>
+          <li>매년 초, 5가지 자산의 <b>비중</b>을 정해요. (바꿔도 되고 그대로 둬도 돼요)</li>
+          <li>‘1년 보내기’를 누르면 그해의 <b>시장 뉴스</b>와 자산별 수익률이 공개돼요.</li>
+          <li>두 명의 ‘유령 투자자’와 비교해요.<br>👻 <b>꾸준이</b>: 첫해 비중을 끝까지 유지 + 매년 리밸런싱<br>🏦 <b>예금이</b>: 전부 예금</li>
+          <li>같은 <b>시드 번호</b>면 모든 친구가 똑같은 시장을 겪어요. 누가 더 현명했을까?</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <div id="g-play" hidden>
+    <div class="lab game-lab">
+      <aside class="panel">
+        <h3 class="card-title"><svg class="ic"><use href="#i-cal"/></svg>올해의 투자 계획</h3>
+        <div class="agebar"><div><small>지금 나이</small><b id="g-age">25세</b></div><div class="turn"><small>진행</small><b id="g-turn">1 / 20년</b></div></div>
+        <div class="progress" aria-hidden="true"><span id="g-prog" style="width:0%"></span></div>
+        <div class="ctl-title">빠른 선택</div>
+        <div class="chips" id="g-presets"></div>
+        <div class="ctl-title">자산 비중 정하기</div>
+        <div id="g-alloc"></div>
+        <button class="btn big" id="g-next" type="button" style="margin-top:14px">1년 보내기 →</button>
+        <p class="g-last" id="g-last" aria-live="polite"></p>
+        <button class="btn ghost" id="g-reset" type="button" style="width:100%;margin-top:8px">처음부터 다시</button>
+      </aside>
+      <div class="game-right">
+        <div class="panel" id="g-endwrap" hidden></div>
+        <div class="panel journey">
+          <h3 class="card-title"><svg class="ic"><use href="#i-trend"/></svg>나의 투자 여정</h3>
+          <div class="cards" id="g-cards"></div>
+          <canvas class="chart" id="g-chart" aria-label="나, 꾸준이, 예금이의 자산 변화 그래프" role="img"></canvas>
+          <div class="legend">
+            <span><i style="background:#E5566B"></i>🙋 나</span>
+            <span><i style="background:#4C7BD9"></i>👻 꾸준이</span>
+            <span><i style="background:#9AA3B2"></i>🏦 예금이</span>
+            <span><i class="dash" style="color:#C9CDD5;background:#C9CDD5"></i>낸 돈</span>
+          </div>
+        </div>
+        <div class="panel event" id="g-event" aria-live="polite"></div>
+        <div class="panel diary">
+          <h3 class="card-title">📒 투자 일기</h3>
+          <div class="log tablewrap"><table class="t" id="g-log"></table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PENSION ======================= -->
+<section id="pension" class="tab">
+  <div class="sec-head">
+    <span class="kicker">LAB ④</span>
+    <h2>연금 계좌 & 4% 룰 — 같은 돈, 다른 그릇</h2>
+    <p>똑같이 투자해도 <b>어떤 계좌</b>에 담느냐에 따라 세금이 달라지고, 그 차이가 복리로 커져요.</p>
+  </div>
+
+  <div class="part-head" style="margin-top:8px"><span class="num-badge">1</span><div class="ph-txt"><h3>노후 준비의 기초</h3><p>연금은 어떤 구조로 쌓일까?</p></div></div>
+  <div class="grid2">
+    <div class="panel">
+      <h3>🏠 노후 준비 3층 집</h3>
+      <div class="floors">
+        <div class="floor" style="background:var(--lav)"><b>3층 · 개인연금 — 내가 스스로</b><small>연금저축펀드, IRP(개인형 퇴직연금), ISA → 세금 혜택을 주는 ‘절세 계좌’</small></div>
+        <div class="floor" style="background:var(--sky)"><b>2층 · 퇴직연금 — 회사가 함께</b><small>퇴직금·퇴직연금(DB/DC). 2022년 4월부터 퇴직금은 원칙적으로 IRP 계좌로 받아요 📘#8</small></div>
+        <div class="floor" style="background:var(--mint)"><b>1층 · 국민연금 — 나라가 기본으로</b><small>일하는 사람이라면 의무 가입. 최소한의 생활 보장</small></div>
+      </div>
+      <p class="note">1층만으로는 부족한 경우가 많아 2·3층을 함께 쌓아야 해요.</p>
+    </div>
+    <div class="panel">
+      <h3>🏖️ ‘연금(pension)’과 ‘펜션’이 같은 말? <span class="pill book">📘 #2</span></h3>
+      <p style="margin:0 0 8px">맞아요! pension의 뿌리는 라틴어 <b>pensio(지불, 치르는 돈)</b>. 유럽에서 ‘돈을 내고 머무는 숙소’라는 뜻이 생겨 우리가 아는 휴가지 <b>펜션</b>이 되었고, ‘정기적으로 지급되는 돈’이라는 뜻에서 <b>연금</b>이 되었어요.</p>
+      <div class="insight say" style="margin-top:6px">연금은 <b>은퇴 후 인생을 편히 머물게 해주는 펜션</b>이라고 기억해 보세요. 그 펜션을 지을 재료는 바로 <b>지금부터의 시간(복리)</b>입니다.</div>
+    </div>
+  </div>
+
+  <div class="part-head"><span class="num-badge">2</span><div class="ph-txt"><h3>연금저축 vs 일반 계좌</h3><p>같은 수익률, 다른 계좌 — 세금이 만드는 차이</p></div></div>
+  <div class="lab">
+    <aside class="panel">
+      <h3><span class="step">1</span>조건 정하기</h3>
+      <label class="sl"><span class="sl-top"><span>매달 납입</span><output id="pn-m-o"></output></span><input type="range" id="pn-m" min="5" max="150" step="5" value="50"></label>
+      <label class="sl"><span class="sl-top"><span>납입 기간</span><output id="pn-y-o"></output></span><input type="range" id="pn-y" min="5" max="40" step="1" value="30"></label>
+      <label class="sl"><span class="sl-top"><span>연 수익률 (두 계좌 동일)</span><output id="pn-r-o"></output></span><input type="range" id="pn-r" min="0" max="10" step="0.5" value="6"></label>
+      <div class="field" style="margin-bottom:12px"><label for="pn-c" style="font-size:14.5px">세액공제율</label>
+        <select class="num" id="pn-c"><option value="0.165">16.5% (총급여 5,500만원 이하)</option><option value="0.132">13.2% (그 초과)</option></select></div>
+      <label class="check"><input type="checkbox" id="pn-reinv" checked><span><b>환급받은 세금도 다시 투자</b><small>연말정산으로 돌려받은 돈을 연금저축에 다시 넣기</small></span></label>
+      <p class="note">단순화 모델: 일반 계좌는 매년 수익에 15.4%가 과세된다고 가정(예: 국내 상장 해외 ETF의 분배금·매매차익). 연금저축 세액공제 한도는 연 600만원(IRP 합산 900만원). 연금 수령 시 연금소득세는 55~69세 5.5%로 계산.</p>
+    </aside>
+    <div class="col">
+      <div class="panel">
+        <h3><span class="step">2</span>계좌별 결과</h3>
+        <div class="cards" id="pn-cards"></div>
+        <canvas class="chart" id="pn-chart" aria-label="일반 계좌와 연금저축 비교 그래프" role="img"></canvas>
+        <div class="legend">
+          <span><i class="dash" style="color:#A3AAB6;background:#A3AAB6"></i>낸 돈</span>
+          <span><i style="background:#9AA3B2"></i>일반 계좌 (세후)</span>
+          <span><i style="background:#7C5CE0"></i>연금저축 (평가액)</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3><span class="step">3</span>🎁 연금저축의 3단 혜택 <span class="pill book">📘 #4 · #5</span></h3>
+        <div class="waterfall" id="pn-water"></div>
+        <div class="tablewrap" style="margin-top:12px"><table class="t" id="pn-table"></table></div>
+        <div class="insight say" id="pn-insight"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-head"><span class="num-badge">3</span><div class="ph-txt"><h3>은퇴 후 꺼내 쓰기 — 4% 룰</h3><p>모은 돈을 얼마씩 쓰면 오래 버틸까?</p></div></div>
+  <div class="lab">
+    <aside class="panel">
+      <h3><span class="step">1</span>은퇴 조건 <span class="pill book">📘 #3</span></h3>
+      <div class="field" style="margin-bottom:8px"><label for="wd-b" style="font-size:14.5px">은퇴 자산 (만원)</label><input type="number" class="num" id="wd-b" value="30000" step="1000" min="0"></div>
+      <button class="btn ghost" id="wd-pull" type="button" style="width:100%;margin-bottom:14px;font-size:14px">↑ 위 연금저축 결과 가져오기</button>
+      <label class="sl"><span class="sl-top"><span>은퇴 나이</span><output id="wd-age-o"></output></span><input type="range" id="wd-age" min="55" max="70" step="1" value="60"></label>
+      <label class="sl"><span class="sl-top"><span>첫해 인출률</span><output id="wd-rate-o"></output></span><input type="range" id="wd-rate" min="2" max="10" step="0.5" value="4"></label>
+      <label class="sl"><span class="sl-top"><span>은퇴 후 운용 수익률</span><output id="wd-r-o"></output></span><input type="range" id="wd-r" min="0" max="10" step="0.5" value="5"></label>
+      <label class="sl"><span class="sl-top"><span>물가상승률 (인출액도 매년 증가)</span><output id="wd-inf-o"></output></span><input type="range" id="wd-inf" min="0" max="5" step="0.5" value="2.5"></label>
+    </aside>
+    <div class="col">
+      <div class="panel">
+        <h3><span class="step">2</span>남은 자산의 변화</h3>
+        <div class="cards" id="wd-cards"></div>
+        <canvas class="chart" id="wd-chart" aria-label="은퇴 후 남은 자산 그래프" role="img"></canvas>
+        <div class="legend" id="wd-legend"></div>
+        <div class="insight" id="wd-insight"></div>
+      </div>
+      <div class="panel">
+        <h3>🧮 거꾸로 계산: 나는 얼마를 모아야 할까?</h3>
+        <div class="inline"><label for="need-m">은퇴 후 한 달 생활비</label> <input type="number" class="num" id="need-m" value="200" min="0" step="10"> 만원이 필요하다면 →</div>
+        <p id="need-out" style="font-size:16px;margin:10px 0 0"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="part-head"><span class="num-badge">4</span><div class="ph-txt"><h3>생활 속 계산기</h3><p>퇴직금과 ISA 전환 혜택</p></div></div>
+  <div class="grid2">
+    <div class="panel">
+      <h3>💼 퇴직금 계산기 <span class="pill book">📘 #9</span></h3>
+      <div class="inline" style="margin-bottom:8px"><label for="rt-pay" style="width:120px">월 평균 임금</label><input type="number" class="num" id="rt-pay" value="300" min="0" step="10"> 만원</div>
+      <div class="inline" style="margin-bottom:8px"><label for="rt-y" style="width:120px">근속 연수</label><input type="number" class="num" id="rt-y" value="10" min="1" step="1"> 년</div>
+      <p id="rt-out" style="margin:10px 0 0"></p>
+      <p class="note">근로기준법: 1년 일할 때마다 최소 <b>30일분의 평균임금</b>. 퇴직금 ≈ 1일 평균임금 × 30일 × 근속연수 (여기서는 1일 평균임금 ≈ 월 임금 × 12 ÷ 365로 단순화).</p>
+    </div>
+    <div class="panel">
+      <h3>🔁 ISA 만기 → 연금저축 전환 <span class="pill book">📘 #6</span></h3>
+      <div class="inline" style="margin-bottom:8px"><label for="isa-amt" style="width:120px">ISA 만기 금액</label><input type="number" class="num" id="isa-amt" value="3000" min="0" step="100"> 만원</div>
+      <div class="inline" style="margin-bottom:8px"><label for="isa-c" style="width:120px">세액공제율</label><select class="num" id="isa-c"><option value="0.165">16.5%</option><option value="0.132">13.2%</option></select></div>
+      <p id="isa-out" style="margin:10px 0 0"></p>
+      <p class="note">만기 후 60일 안에 연금계좌로 옮기면 전환 금액의 10%(최대 300만원)를 추가로 세액공제 대상에 넣어줘요. ISA 비과세 한도(200만원, 서민형 400만원)는 배당과 매매차익을 합친 ‘계좌 전체 순이익’ 기준이에요 (📘 #21).</p>
+    </div>
+  </div>
+
+  <details class="mathbox"><summary>📐 수학 시간! 과세이연은 왜 유리할까?</summary><div id="pn-math"></div></details>
+  <p class="note">⚠️ 세법은 자주 바뀌어요. 이 페이지는 2026년 기준 제도를 수업용으로 단순화한 것이므로 실제 가입·인출 전에는 금융회사나 국세청 안내를 꼭 확인하세요.</p>
+</section>
+
+<!-- ======================= QUIZ ======================= -->
+<section id="quiz" class="tab">
+  <div class="sec-head">
+    <span class="kicker">CHECK</span>
+    <h2>퀴즈 & 활동지</h2>
+    <p>오늘 배운 내용을 점검하고, 나만의 투자 원칙을 정리해 보세요.</p>
+  </div>
+  <div class="field noprint" style="max-width:320px"><label for="qz-name">이름</label><input class="num" id="qz-name" placeholder="학번 이름"></div>
+  <div class="score noprint"><span>점수 <b id="qz-score">0</b> / <span id="qz-total"></span></span><button class="btn ghost" id="qz-reset" type="button">다시 풀기</button></div>
+  <div id="qz-list"></div>
+  <div class="panel worksheet" style="margin-top:22px">
+    <h3 class="card-title">📝 활동지 — 나의 투자 원칙 (<span id="qz-print-name">이름: ________</span>)</h3>
+    <div class="ws-block"><p class="ws-q"><label for="ws1">1. 20살이 되면 가장 먼저 만들고 싶은 계좌와 그 이유는? (예: 연금저축펀드, ISA, IRP …)</label></p>
+    <textarea id="ws1"></textarea><div class="print-only print-ans" id="ws1-print"></div></div>
+    <div class="ws-block"><p class="ws-q"><label for="ws2">2. 포트폴리오 실험실에서 고른 나의 자산 배분(비중)과 그 이유는?</label></p>
+    <textarea id="ws2"></textarea><div class="print-only print-ans" id="ws2-print"></div></div>
+    <div class="ws-block"><p class="ws-q"><label for="ws3">3. 투자 인생 게임에서 가장 기억에 남는 해와, 그때 나의 선택은 옳았을까?</label></p>
+    <textarea id="ws3"></textarea><div class="print-only print-ans" id="ws3-print"></div></div>
+    <div class="ws-block"><p class="ws-q"><label for="ws4">4. 선생님 독후감의 문장 중 하나를 골라, 수학(복리·확률·통계)과 연결해 설명해 보기</label></p>
+    <textarea id="ws4"></textarea><div class="print-only print-ans" id="ws4-print"></div></div>
+    <div class="inline noprint" style="margin-top:14px"><button class="btn" id="ws-print" type="button">🖨️ 활동지 인쇄 / PDF 저장</button><span class="hint">작성 내용은 이 컴퓨터 브라우저에 자동 저장돼요.</span></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  ※ 이 시뮬레이터는 경제수학 수업을 위한 교육용 자료이며 특정 상품의 투자 권유가 아닙니다. 모든 수익률은 가정이고, 실제 결과는 다를 수 있어요.<br>
+  참고 도서: 박곰희, 『연금 부자 수업』, 인플루엔셜 — 2026 수학과 독후감을 바탕으로 제작
+</footer>
+
+<script>
+/* ============================================================
+   공통 유틸
+   ============================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+function fmtWon(v) {
+  if (!isFinite(v)) return '-';
+  const s = v < 0 ? '-' : '';
+  v = Math.abs(v);
+  if (v >= 1e8) {
+    let eok = Math.floor(v / 1e8), man = Math.round((v - eok * 1e8) / 1e4);
+    if (man >= 10000) { eok += 1; man = 0; }
+    return s + eok.toLocaleString() + '억' + (man ? ' ' + man.toLocaleString() + '만원' : '원');
+  }
+  if (v >= 1e4) return s + Math.round(v / 1e4).toLocaleString() + '만원';
+  return s + Math.round(v).toLocaleString() + '원';
+}
+function fmtShort(v) {
+  const a = Math.abs(v);
+  if (a >= 1e8) return +(v / 1e8).toFixed(a >= 1e9 ? 0 : 1) + '억';
+  if (a >= 1e4) return Math.round(v / 1e4).toLocaleString() + '만';
+  return Math.round(v).toLocaleString();
+}
+const pct = (x, d = 1) => (x * 100).toFixed(d) + '%';
+const signPct = (x, d = 1) => {
+  const s = (x * 100).toFixed(d);
+  return +s === 0 ? (0).toFixed(d) + '%' : (x > 0 ? '+' : '') + s + '%';
+};
+const manwon = v => v.toLocaleString() + '만원';
+
+function bindRange(id, fmt, cb) {
+  const el = $('#' + id), o = $('#' + id + '-o');
+  const f = () => { o.textContent = fmt(+el.value); };
+  el.addEventListener('input', () => { f(); cb(); });
+  f();
+}
+// 슬라이더 왼쪽(채워진 부분) 색칠
+function paintRange(el) {
+  const min = +el.min || 0, max = +el.max || 100;
+  el.style.setProperty('--p', ((+el.value - min) / (max - min) * 100) + '%');
+}
+const paintAllRanges = () => $$('input[type=range]').forEach(paintRange);
+document.addEventListener('input', e => { if (e.target.type === 'range') paintRange(e.target); });
+
+// 🎉 꽃가루
+function confetti(n = 30, set = ['🎉', '✨', '🪙', '💰', '🐷', '⭐']) {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  for (let i = 0; i < n; i++) {
+    const s = document.createElement('span');
+    s.className = 'confetti';
+    s.textContent = set[Math.floor(Math.random() * set.length)];
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.animationDuration = (1.8 + Math.random() * 1.6) + 's';
+    s.style.animationDelay = (Math.random() * 0.5) + 's';
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 4200);
+  }
+}
+
+function legend(el, items) {
+  el.innerHTML = items.map(it => `<span><i class="${it.dash ? 'dash' : ''}" style="color:${it.color};background:${it.color};${it.alpha ? 'opacity:' + it.alpha : ''}"></i>${it.name}</span>`).join('');
+}
+function stat(label, value, sub = '', hl = false) {
+  return `<div class="stat${hl ? ' hl' : ''}"><small>${label}</small><b>${value}</b>${sub ? `<em>${sub}</em>` : ''}</div>`;
+}
+
+/* 시드가 있는 난수 (같은 번호 = 같은 결과) */
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function makeNormal(rng) {
+  let spare = null;
+  return function () {
+    if (spare !== null) { const s = spare; spare = null; return s; }
+    let u, v, s;
+    do { u = rng() * 2 - 1; v = rng() * 2 - 1; s = u * u + v * v; } while (s >= 1 || s === 0);
+    const m = Math.sqrt(-2 * Math.log(s) / s);
+    spare = v * m;
+    return u * m;
+  };
+}
+function cholesky(M) {
+  const n = M.length, L = M.map(r => r.map(() => 0));
+  for (let i = 0; i < n; i++) for (let j = 0; j <= i; j++) {
+    let s = M[i][j];
+    for (let k = 0; k < j; k++) s -= L[i][k] * L[j][k];
+    L[i][j] = i === j ? Math.sqrt(Math.max(s, 1e-12)) : s / L[j][j];
+  }
+  return L;
+}
+const quantile = (sorted, p) => sorted[Math.min(sorted.length - 1, Math.max(0, Math.floor(p * (sorted.length - 1))))];
+
+/* ============================================================
+   캔버스 차트 (외부 라이브러리 없이)
+   ============================================================ */
+function niceStep(range, ticks) {
+  const raw = range / ticks, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p;
+  return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
+}
+const CHART_FONT = 'Pretendard, "Malgun Gothic", sans-serif';
+const CH = { grid: '#EFECE6', axis: '#D9D5CD', label: '#8A93A3', ink: '#253046' };
+function setupCanvas(cv) {
+  const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+  if (!W || !H) return null;
+  cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  ctx.font = '12.5px ' + CHART_FONT;
+  return { ctx, W, H };
+}
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+function drawChart(cv, cfg) {
+  if (cfg) cv._cfg = cfg;
+  cfg = cv._cfg;
+  if (!cfg) return;
+  cv._redraw = () => drawChart(cv);
+  if (!cv._bound) {
+    cv._bound = true;
+    const move = x => { const r = cv.getBoundingClientRect(); cv._mx = x - r.left; drawChart(cv); };
+    cv.addEventListener('mousemove', e => move(e.clientX));
+    cv.addEventListener('touchstart', e => move(e.touches[0].clientX), { passive: true });
+    cv.addEventListener('touchmove', e => move(e.touches[0].clientX), { passive: true });
+    cv.addEventListener('mouseleave', () => { cv._mx = null; drawChart(cv); });
+  }
+  const c = setupCanvas(cv);
+  if (!c) return;
+  const { ctx, W, H } = c;
+  const n = cfg.n, series = cfg.series || [], bands = cfg.bands || [];
+  let lo = cfg.ymin ?? 0, hi = -Infinity;
+  series.forEach(s => s.data.forEach(v => { if (v > hi) hi = v; if (cfg.ymin == null && v < lo) lo = v; }));
+  bands.forEach(b => b.hi.forEach(v => { if (v > hi) hi = v; }));
+  if (!(hi > lo)) hi = lo + 1;
+  const step = niceStep(hi - lo, W < 420 ? 4 : 5);
+  hi = Math.ceil(hi / step) * step; lo = Math.floor(lo / step) * step;
+  // 축 레이블 너비에 맞춰 왼쪽 여백 결정
+  const yFmt = cfg.yFmt || fmtShort;
+  let labW = 0;
+  for (let v = lo; v <= hi + step / 2; v += step) labW = Math.max(labW, ctx.measureText(yFmt(v)).width);
+  const pad = { l: Math.ceil(labW) + 16, r: 14, t: 14, b: 32 }, pw = W - pad.l - pad.r, ph = H - pad.t - pad.b;
+  const X = i => pad.l + (n <= 1 ? 0 : pw * i / (n - 1));
+  const Y = v => pad.t + ph * (1 - (v - lo) / (hi - lo));
+
+  ctx.textBaseline = 'middle'; ctx.textAlign = 'right'; ctx.lineWidth = 1;
+  for (let v = lo; v <= hi + step / 2; v += step) {
+    const y = Math.round(Y(v)) + 0.5;
+    ctx.strokeStyle = Math.abs(v) < step / 1000 ? CH.axis : CH.grid;
+    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(W - pad.r, y); ctx.stroke();
+    ctx.fillStyle = CH.label; ctx.fillText(yFmt(v), pad.l - 8, y);
+  }
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  const maxLabels = Math.max(2, Math.floor(pw / 58)), xs = Math.max(1, Math.ceil((n - 1) / maxLabels));
+  for (let i = 0; i < n; i += xs) ctx.fillText(cfg.xFmt ? cfg.xFmt(i) : String(i), X(i), H - pad.b + 10);
+
+  bands.forEach(b => {
+    ctx.fillStyle = b.color; ctx.beginPath();
+    b.hi.forEach((v, i) => i ? ctx.lineTo(X(i), Y(v)) : ctx.moveTo(X(i), Y(v)));
+    for (let i = n - 1; i >= 0; i--) ctx.lineTo(X(i), Y(b.lo[i]));
+    ctx.closePath(); ctx.fill();
+  });
+  series.forEach(s => {
+    ctx.strokeStyle = s.color; ctx.lineWidth = s.width || 2.6; ctx.setLineDash(s.dash || []);
+    ctx.globalAlpha = s.alpha ?? 1; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath();
+    s.data.forEach((v, i) => i ? ctx.lineTo(X(i), Y(v)) : ctx.moveTo(X(i), Y(v)));
+    ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+    if (s.points) s.data.forEach((v, i) => {
+      ctx.fillStyle = '#fff'; ctx.strokeStyle = s.color; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(X(i), Y(v), 3.5, 0, 7); ctx.fill(); ctx.stroke();
+    });
+  });
+
+  if (cv._mx != null && n > 1 && cv._mx >= pad.l - 20) {
+    const i = Math.max(0, Math.min(n - 1, Math.round((cv._mx - pad.l) / pw * (n - 1))));
+    const x = X(i);
+    ctx.strokeStyle = 'rgba(37,48,70,.3)'; ctx.lineWidth = 1; ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t + ph); ctx.stroke(); ctx.setLineDash([]);
+    const rows = series.filter(s => !s.noTip).map(s => ({ c: s.color, t: s.name + ': ' + (cfg.tipFmt || fmtWon)(s.data[i]), v: s.data[i] }));
+    if (cfg.tipExtra) cfg.tipExtra(i).forEach(r => rows.push(r));
+    rows.forEach(r => { if (r.v != null) { ctx.fillStyle = '#fff'; ctx.strokeStyle = r.c; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(x, Y(r.v), 4.5, 0, 7); ctx.fill(); ctx.stroke(); } });
+    // 툴팁: 좁은 화면에서는 글자를 줄이고, 캔버스 밖으로 나가지 않게 고정
+    const fs = W < 420 ? 11.5 : 12.5, lh = fs + 6;
+    ctx.font = fs + 'px ' + CHART_FONT;
+    const title = cfg.xLong ? cfg.xLong(i) : (cfg.xFmt ? cfg.xFmt(i) : String(i));
+    const tw = Math.min(W - 8, Math.max(ctx.measureText(title).width, ...rows.map(r => ctx.measureText(r.t).width)) + 32);
+    const th = 16 + lh * (rows.length + 1);
+    let bx = x + 14; if (bx + tw > W - 4) bx = x - 14 - tw;
+    bx = Math.max(4, Math.min(bx, W - tw - 4));
+    const by = pad.t + 2;
+    ctx.save();
+    ctx.shadowColor = 'rgba(37,48,70,.14)'; ctx.shadowBlur = 14; ctx.shadowOffsetY = 4;
+    ctx.fillStyle = 'rgba(255,255,255,.98)'; roundRect(ctx, bx, by, tw, th, 10); ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle = '#E8E5DF'; ctx.lineWidth = 1; roundRect(ctx, bx, by, tw, th, 10); ctx.stroke();
+    ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+    ctx.fillStyle = CH.ink; ctx.font = 'bold ' + fs + 'px ' + CHART_FONT;
+    ctx.fillText(title, bx + 12, by + 8);
+    ctx.font = fs + 'px ' + CHART_FONT;
+    rows.forEach((r, k) => {
+      const ry = by + 8 + lh * (k + 1);
+      ctx.fillStyle = r.c; roundRect(ctx, bx + 12, ry + 3, 9, 9, 2.5); ctx.fill();
+      ctx.fillStyle = CH.ink; ctx.fillText(r.t, bx + 26, ry);
+    });
+  }
+}
+function drawHist(cv, vals, marks) {
+  cv._redraw = () => drawHist(cv, vals, marks);
+  const c = setupCanvas(cv);
+  if (!c) return;
+  const { ctx, W, H } = c;
+  const pad = { l: 36, r: 14, t: 40, b: 30 }, pw = W - pad.l - pad.r, ph = H - pad.t - pad.b;
+  const sorted = Float64Array.from(vals).sort();
+  let lo = sorted[0], hi = quantile(sorted, 0.98);
+  marks.forEach(m => { if (m.v < lo) lo = m.v; if (m.v > hi) hi = m.v; });
+  if (hi - lo < Math.max(1, Math.abs(hi) * 0.02)) { const d = Math.max(1e5, Math.abs(hi) * 0.05); lo -= d; hi += d; }
+  const bins = 24, bw = (hi - lo) / bins, counts = new Array(bins).fill(0);
+  sorted.forEach(v => { counts[Math.max(0, Math.min(bins - 1, Math.floor((v - lo) / bw)))]++; });
+  const cmax = Math.max(...counts);
+  const X = v => pad.l + (v - lo) / (hi - lo) * pw;
+  [0.5, 1].forEach(f => {
+    const y = Math.round(pad.t + ph * (1 - f)) + 0.5;
+    ctx.strokeStyle = CH.grid; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(W - pad.r, y); ctx.stroke();
+  });
+  counts.forEach((cnt, k) => {
+    const h = cnt / cmax * ph;
+    if (h <= 0) return;
+    ctx.fillStyle = 'rgba(124,92,224,.42)';
+    roundRect(ctx, pad.l + k * pw / bins + 1, pad.t + ph - h, Math.max(1, pw / bins - 2), h, Math.min(3, h / 2)); ctx.fill();
+  });
+  ctx.strokeStyle = CH.axis; ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ph + 0.5); ctx.lineTo(W - pad.r, pad.t + ph + 0.5); ctx.stroke();
+  ctx.fillStyle = CH.label; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  const ticks = W < 420 ? 3 : 4;
+  for (let k = 0; k <= ticks; k++) { const v = lo + (hi - lo) * k / ticks; ctx.fillText(fmtShort(v), X(v), pad.t + ph + 9); }
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillText(cmax, pad.l - 7, pad.t); ctx.fillText('0', pad.l - 7, pad.t + ph);
+  // 표시선 + 이름표(겹치지 않게 줄을 나눔)
+  ctx.font = 'bold 12px ' + CHART_FONT;
+  marks.forEach(m => {
+    const x = X(m.v);
+    ctx.strokeStyle = m.color; ctx.lineWidth = 2; ctx.setLineDash(m.dash || []);
+    ctx.beginPath(); ctx.moveTo(x, pad.t - 4); ctx.lineTo(x, pad.t + ph); ctx.stroke(); ctx.setLineDash([]);
+    const tw = ctx.measureText(m.label).width + 12, ty = 4 + (m.row || 0) * 17;
+    let tx = x - tw / 2; tx = Math.max(2, Math.min(tx, W - tw - 2));
+    ctx.fillStyle = '#fff'; roundRect(ctx, tx, ty, tw, 16, 8); ctx.fill();
+    ctx.strokeStyle = m.color; ctx.lineWidth = 1.2; roundRect(ctx, tx, ty, tw, 16, 8); ctx.stroke();
+    ctx.fillStyle = m.color; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    ctx.fillText(m.label, tx + 6, ty + 8.5);
+  });
+}
+
+/* ============================================================
+   탭 전환
+   ============================================================ */
+const TAB_IDS = ['home', 'dict', 'lab1', 'lab2', 'game', 'pension', 'quiz'];
+function showTab(id, scroll = true) {
+  if (!TAB_IDS.includes(id)) id = 'home';
+  $$('.tab').forEach(s => s.classList.toggle('active', s.id === id));
+  $$('#tabs button').forEach(b => {
+    const on = b.dataset.tab === id;
+    b.classList.toggle('on', on);
+    if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+  });
+  // 모바일에서 선택된 메뉴가 보이도록 메뉴 줄만 가로로 이동
+  const bar = $('#tabs'), ob = $('#tabs .on');
+  if (ob && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: ob.offsetLeft - (bar.clientWidth - ob.offsetWidth) / 2, behavior: scroll ? 'smooth' : 'auto' });
+  try { history.replaceState(null, '', '#' + id); } catch (e) { /* file:// 등 */ }
+  requestAnimationFrame(() => $$('#' + id + ' canvas').forEach(c => c._redraw && c._redraw()));
+  if (scroll) window.scrollTo({ top: 0 });
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) showTab(b.dataset.tab); });
+document.addEventListener('click', e => { const g = e.target.closest('[data-goto]'); if (g) showTab(g.dataset.goto); });
+window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (TAB_IDS.includes(h)) showTab(h); });
+let rsT;
+window.addEventListener('resize', () => { clearTimeout(rsT); rsT = setTimeout(() => $$('.tab.active canvas').forEach(c => c._redraw && c._redraw()), 120); });
+
+/* ============================================================
+   📖 용어 사전
+   ============================================================ */
+const TERMS = [
+  // 주식 기초
+  { t: '주식', en: 'Stock', cat: '주식 기초', easy: '회사를 아주 잘게 쪼갠 ‘조각 하나’예요. 주식을 사면 그만큼 회사의 주인(주주)이 돼요.', ex: '어떤 회사가 주식 100만 주를 발행했다면, 1주를 가진 나는 그 회사의 100만분의 1 주인!', book: [14] },
+  { t: '주가', en: 'Stock Price', cat: '주식 기초', easy: '주식 1주의 현재 가격. 사려는 사람이 많으면 오르고, 팔려는 사람이 많으면 내려가요.', ex: '“삼성전자 주가 2% 상승” = 어제보다 1주의 가격이 2% 올랐다는 뜻.' },
+  { t: '매수 · 매도', en: 'Buy · Sell', cat: '주식 기초', easy: '매수(買收)는 사는 것, 매도(賣渡)는 파는 것. 뉴스에서 “외국인 순매수”는 외국인이 판 것보다 산 게 더 많다는 뜻이에요.', ex: '순매수 = 매수 금액 − 매도 금액 > 0' },
+  { t: '호가', en: 'Bid · Ask', cat: '주식 기초', easy: '“이 가격에 살게요/팔게요” 하고 부르는 가격. 사고 싶은 가격(매수 호가)과 팔고 싶은 가격(매도 호가)이 만나면 거래가 성사돼요.', ex: '시장 경매에서 손 들고 가격 부르는 것과 같아요.' },
+  { t: '시가총액', en: 'Market Cap', cat: '주식 기초', easy: '회사 전체의 몸값. 주가 × 발행한 주식 수.', ex: '주가 5만원 × 60억 주 = 시가총액 300조원', math: '시가총액 = 주가 × 주식 수 (곱셈 하나로 회사 크기를 비교!)' },
+  { t: '시세차익', en: 'Capital Gain', cat: '주식 기초', easy: '싸게 사서 비싸게 팔았을 때 생기는 차익. 개인 투자자가 돈을 버는 두 가지 방법 중 하나예요 (나머지 하나는 배당).', ex: '1만원에 사서 1만 3천원에 팔면 시세차익 3천원 (수익률 30%)', book: [14] },
+  { t: '배당', en: 'Dividend', cat: '주식 기초', easy: '회사가 번 돈의 일부를 주주에게 나눠주는 ‘이익 나눔’. 오래 보유해 줄 주주를 모으려고 지급해요.', ex: '1주당 1,000원 배당 → 100주 가진 나는 10만원 (세금 15.4% 떼고 입금)', book: [14] },
+  { t: '배당수익률', en: 'Dividend Yield', cat: '주식 기초', easy: '주가 대비 1년에 받는 배당금의 비율. 은행 이자율과 비교해 볼 수 있어요.', ex: '주가 5만원, 연 배당 2,000원 → 배당수익률 4%', math: '배당수익률 = 주당 배당금 ÷ 주가 × 100' },
+  { t: 'PER (주가수익비율)', en: 'Price-Earnings Ratio', cat: '주식 기초', easy: '회사가 지금처럼 돈을 번다면 ‘주가만큼 벌어들이는 데 몇 년 걸리나’를 나타내요. 낮으면 싸다, 높으면 기대가 크다는 뜻.', ex: '주가 2만원, 1주당 1년 순이익 2,000원 → PER 10 (10년이면 본전)', math: 'PER = 주가 ÷ 주당순이익(EPS)' },
+  { t: 'PBR (주가순자산비율)', en: 'Price-Book Ratio', cat: '주식 기초', easy: '회사를 오늘 문 닫고 재산을 다 나눠준다면 받을 돈(순자산) 대비 주가가 몇 배인지. 1보다 작으면 ‘회사 재산보다 싸게 거래 중’.', ex: 'PBR 0.8 = 1만원어치 재산을 8천원에 사는 셈', math: 'PBR = 주가 ÷ 주당순자산(BPS)' },
+  { t: '지수 (코스피 · S&P500)', en: 'Market Index', cat: '주식 기초', easy: '시장 전체의 성적표. 여러 회사 주가를 한데 묶어 하나의 숫자로 나타내요.', ex: '코스피 = 한국 유가증권시장 전체, S&P500 = 미국 대표 기업 500개의 성적표' },
+  { t: '강세장 · 약세장', en: 'Bull · Bear Market', cat: '주식 기초', easy: '황소(Bull)는 뿔을 아래에서 위로 치켜올리니 상승장, 곰(Bear)은 앞발을 위에서 아래로 내리치니 하락장!', ex: '보통 고점 대비 20% 이상 떨어지면 ‘약세장 진입’이라고 해요.' },
+  // 펀드·ETF
+  { t: '펀드', en: 'Fund', cat: '펀드 · ETF', easy: '여러 사람의 돈을 모아 전문가(운용사)가 대신 투자해 주는 ‘공동 장바구니’.', ex: '1만 명이 10만원씩 모은 10억원으로 수십 개 회사에 나눠 투자' },
+  { t: 'ETF (상장지수펀드)', en: 'Exchange Traded Fund', cat: '펀드 · ETF', easy: '펀드인데 주식처럼 앱에서 바로 사고팔 수 있게 ‘상장’시킨 것. 지수(시장 성적표)를 그대로 따라가는 바구니가 많아요.', ex: 'S&P500 ETF 1주를 사면 미국 500개 기업을 조금씩 한꺼번에 사는 효과', book: [22] },
+  { t: '인덱스 투자', en: 'Index Investing', cat: '펀드 · ETF', easy: '어떤 종목이 오를지 맞히려 하지 않고 시장 전체(지수)를 통째로 사는 방법. 수수료가 싸고 단순해요.', ex: '“바늘을 찾지 말고 건초더미를 통째로 사라” — 존 보글' },
+  { t: 'NAV (순자산가치)', en: 'Net Asset Value', cat: '펀드 · ETF', easy: 'ETF 바구니 안에 든 자산들의 ‘진짜 가치’를 1주 기준으로 계산한 값.', ex: '바구니 속 주식 가치 합이 100억원, ETF가 1억 주 → NAV 100원', book: [22] },
+  { t: '괴리율', en: 'Premium / Discount', cat: '펀드 · ETF', easy: 'ETF의 시장 가격이 진짜 가치(NAV)와 얼마나 벌어졌는지. 괴리율이 크면 ‘제값보다 비싸게(싸게)’ 사고 있다는 뜻.', ex: 'NAV 10,000원인데 시장가 10,150원 → 괴리율 +1.5% (비싸게 사는 중!)', math: '괴리율 = (시장가격 − NAV) ÷ NAV × 100', book: [22] },
+  { t: '총보수 (수수료)', en: 'Expense Ratio', cat: '펀드 · ETF', easy: '펀드·ETF를 운용해 주는 대가로 매년 떼어가는 비용. 작아 보여도 복리로 쌓여요.', ex: '30년간 연 0.1% vs 1.0% 수수료 → 최종 자산이 20% 이상 차이 날 수 있어요.', math: '(1+r−0.001)³⁰ vs (1+r−0.01)³⁰ 을 계산해 보세요.' },
+  { t: 'TDF (타깃데이트펀드)', en: 'Target Date Fund', cat: '펀드 · ETF', easy: '은퇴 예정 연도(Target Date)를 정해두면 알아서 젊을 땐 주식을 많이, 은퇴가 가까워질수록 채권을 많이 담아주는 ‘자동운전’ 펀드.', ex: 'TDF2060 = 2060년 즈음 은퇴할 사람을 위한 펀드 (지금 고3이라면 2065~2070 정도?)', book: [13] },
+  // 채권·금리
+  { t: '채권', en: 'Bond', cat: '채권 · 금리', easy: '나라나 회사에 돈을 빌려주고 받는 ‘차용증’. 정해진 날 이자를 받고, 만기에 원금을 돌려받아요.', ex: '국채 = 나라에 빌려준 것, 회사채 = 회사에 빌려준 것' },
+  { t: '금리', en: 'Interest Rate', cat: '채권 · 금리', easy: '돈을 빌리는 ‘가격’. 금리가 오르면 빌리기 어려워지고, 예금 이자는 늘고, 주식·채권 가격은 대체로 내려가요.', ex: '기준금리 = 한국은행이 정하는 금리의 기준점' },
+  { t: '듀레이션', en: 'Duration', cat: '채권 · 금리', easy: '채권 가격이 금리 변화에 얼마나 민감한지 나타내는 숫자. 만기가 길수록(장기채) 듀레이션이 커서 금리가 조금만 움직여도 가격이 크게 흔들려요.', ex: '듀레이션 10인 장기채: 금리가 1%p 오르면 가격 약 −10%, 1%p 내리면 약 +10%', math: '가격 변화율 ≈ −D × Δ금리 — 미분의 ‘접선(1차) 근사’와 같은 원리!', book: [19, 20] },
+  { t: '복리', en: 'Compound Interest', cat: '채권 · 금리', easy: '이자에도 이자가 붙는 것. 눈덩이처럼 시간이 지날수록 불어나는 속도가 빨라져요. 단리는 원금에만 이자가 붙어요.', ex: '100만원을 연 10%로 10년: 단리 200만원, 복리 약 259만원', math: '복리: A(1+r)ⁿ (등비수열) / 단리: A(1+rn) (등차수열)', book: [5] },
+  { t: '72의 법칙', en: 'Rule of 72', cat: '채권 · 금리', easy: '72 ÷ 연 수익률(%) ≈ 돈이 2배가 되는 데 걸리는 햇수. 암산용 꿀팁!', ex: '연 6% → 약 12년, 연 9% → 약 8년', math: '(1+r)ⁿ = 2 → n = log2 / log(1+r) ≈ 0.693/r ≈ 72/(100r)' },
+  { t: '인플레이션', en: 'Inflation', cat: '채권 · 금리', easy: '물가가 계속 오르는 현상. 같은 돈으로 살 수 있는 물건이 줄어드니, 돈을 가만히 두면 사실상 가치가 줄어들어요.', ex: '물가가 매년 3% 오르면 24년 뒤 물가는 약 2배 → 현금의 가치는 반토막', book: [1] },
+  { t: '실질수익률', en: 'Real Return', cat: '채권 · 금리', easy: '물가 상승을 빼고 계산한 ‘진짜’ 수익률. 통장 숫자가 늘어도 물가가 더 올랐다면 실제로는 가난해진 것!', ex: '예금 금리 3%, 물가 3.5% → 실질수익률 약 −0.5%', math: '(1+명목)/(1+물가) − 1 ≈ 명목 − 물가' },
+  // 위험·분산
+  { t: '포트폴리오', en: 'Portfolio', cat: '위험 · 분산', easy: '내가 가진 투자 자산들의 ‘구성표’. 원래는 서류를 넣는 가방이라는 뜻이에요.', ex: '미국 주식 ETF 50% + 채권 ETF 40% + 금 10%' },
+  { t: '분산투자', en: 'Diversification', cat: '위험 · 분산', easy: '“계란을 한 바구니에 담지 마라.” 서로 다르게 움직이는 자산을 섞으면 전체 흔들림이 줄어요.', ex: '주식이 폭락한 해에 채권·금이 오르면 손실이 줄어들어요.', math: '두 자산의 상관계수 ρ < 1이면 σ_p < w₁σ₁ + w₂σ₂ (위험이 가중평균보다 작아짐)' },
+  { t: '자산배분', en: 'Asset Allocation', cat: '위험 · 분산', easy: '주식·채권·금·현금 등에 ‘몇 %씩’ 나눌지 정하는 것. 장기 수익의 대부분은 종목 선택보다 자산배분에서 결정된다고 해요.', ex: '주식 60 : 채권 40 — 가장 유명한 기본 배분' },
+  { t: '리밸런싱', en: 'Rebalancing', cat: '위험 · 분산', easy: '시간이 지나 비중이 틀어지면, 많이 오른 것은 조금 팔고 덜 오른 것은 사서 원래 목표 비중으로 되돌리는 것. 자동으로 ‘비쌀 때 팔고 쌀 때 사게’ 돼요.', ex: '목표 주식 60%가 1년 뒤 70%가 되었다면 → 10%p만큼 팔아 채권을 산다.', book: [12] },
+  { t: '변동성', en: 'Volatility', cat: '위험 · 분산', easy: '가격이 얼마나 출렁이는지. 보통 수익률의 ‘표준편차’로 나타내요. 변동성이 크면 크게 벌 수도, 크게 잃을 수도 있어요.', ex: '연 변동성 20% → 평균 근처 ±20% 범위에서 움직이는 해가 약 3분의 2', math: '표준편차 σ = √(분산) — 확률과 통계에서 배운 바로 그것!' },
+  { t: '상관계수', en: 'Correlation', cat: '위험 · 분산', easy: '두 자산이 얼마나 ‘같이 움직이는지’를 −1~+1로 나타낸 값. +1이면 똑같이, −1이면 정반대로, 0이면 제멋대로.', ex: '한국 주식과 미국 주식은 +0.6 정도, 주식과 국채는 0 근처인 경우가 많아요.' },
+  { t: '최대낙폭 (MDD)', en: 'Maximum Drawdown', cat: '위험 · 분산', easy: '가장 높았던 지점에서 가장 많이 떨어졌을 때의 하락률. ‘내가 버틸 수 있는 공포의 크기’를 미리 아는 지표.', ex: '1,000만원 → 600만원까지 떨어졌다면 MDD −40%', math: 'MDD = max(1 − 현재값 ÷ 이전 최고값)' },
+  { t: '적립식 투자', en: 'Dollar Cost Averaging', cat: '위험 · 분산', easy: '매달 같은 금액을 꾸준히 사는 방법. 가격이 쌀 땐 많이, 비쌀 땐 적게 사져서 평균 매입 가격이 고르게 돼요.', ex: '매달 30만원: 1만원일 때 30주, 1.5만원일 때 20주 구매', book: [12] },
+  { t: '환율 · 환노출', en: 'Exchange Rate', cat: '위험 · 분산', easy: '달러 자산을 원화로 사면 ‘주가’와 ‘환율’ 두 가지 영향을 받아요. 환율이 오르면(원화 약세) 원화 기준 수익이 커져요.', ex: '미국 주가 0%, 환율 +10% → 원화 기준 수익 약 +10%' },
+  // 연금·세금
+  { t: '연금', en: 'Pension', cat: '연금 · 세금', easy: '은퇴 후 정기적으로 받는 돈. 영어 pension은 휴가 때 묵는 ‘펜션’과 같은 단어예요 — 은퇴 후 편히 머물게 해주는 돈!', ex: '1층 국민연금, 2층 퇴직연금, 3층 개인연금', book: [2] },
+  { t: '연금저축펀드', en: 'Pension Savings Fund', cat: '연금 · 세금', easy: '노후를 위해 스스로 가입하는 절세 계좌. 넣을 때 세금을 돌려받고(세액공제), 굴리는 동안 세금을 미루고(과세이연), 꺼낼 때 낮은 세율(3.3~5.5%)을 내요.', ex: '연 600만원 납입 → 최대 99만원(16.5%) 연말정산 환급', book: [4, 5, 7] },
+  { t: 'IRP (개인형 퇴직연금)', en: 'Individual Retirement Pension', cat: '연금 · 세금', easy: '퇴직금을 받아두는 개인 계좌이자, 연금저축과 합쳐 연 900만원까지 세액공제를 받을 수 있는 계좌.', ex: '2022년 4월부터 퇴직금은 원칙적으로 IRP로 받아야 해요.', book: [8] },
+  { t: 'ISA (개인종합자산관리계좌)', en: 'Individual Savings Account', cat: '연금 · 세금', easy: '한 계좌 안에서 예금·ETF 등을 자유롭게 굴리고, 순이익 200만원(서민형 400만원)까지 세금을 안 내는 ‘만능 절세 통장’. 3년 의무 유지.', ex: '만기 자금을 60일 안에 연금저축으로 옮기면 최대 300만원 추가 세액공제', book: [6, 10, 11, 21] },
+  { t: '세액공제', en: 'Tax Credit', cat: '연금 · 세금', easy: '내야 할 세금 자체를 깎아주는 것. (소득공제는 세금을 매기는 ‘소득’을 줄여주는 것이라 효과가 달라요.)', ex: '연금저축 600만원 × 16.5% = 세금 99만원 감면', book: [4] },
+  { t: '과세이연', en: 'Tax Deferral', cat: '연금 · 세금', easy: '세금을 ‘안 내는’ 게 아니라 ‘나중에’ 내는 것. 낼 세금까지 계속 굴러가며 복리로 불어나요.', ex: '매년 수익의 15.4%를 떼이는 계좌 vs 30년 뒤 한 번에 내는 계좌 → 큰 차이!', math: '매년 과세: (1+r(1−t))ⁿ  vs  나중 과세: (1+r)ⁿ − t{(1+r)ⁿ − 1}', book: [4, 5] },
+  { t: '연금소득세 (저율과세)', en: 'Pension Income Tax', cat: '연금 · 세금', easy: '55세 이후 연금으로 받으면 나이에 따라 5.5%(~69세) · 4.4%(70~79세) · 3.3%(80세~)의 낮은 세율만 내요. 일반 금융소득세(15.4%)보다 훨씬 낮아요.', ex: '사적연금 수령액이 연 1,500만원을 넘으면 16.5% 분리과세 또는 종합과세를 선택해야 해요.', book: [4, 7] },
+  { t: '기타소득세 16.5%', en: 'Penalty Tax', cat: '연금 · 세금', easy: '연금저축을 연금이 아닌 방식으로 중간에 빼면(중도 해지) 세액공제 받은 원금과 수익에 16.5%를 내요. 혜택을 돌려받는 셈!', ex: '그래서 “가능하면 연금으로 수령하는 것이 좋다”', book: [7] },
+  { t: '4% 룰', en: '4% Rule', cat: '연금 · 세금', easy: '은퇴 자산의 4%를 첫해 생활비로 쓰고, 이후엔 물가만큼만 늘려 쓰면 30년 이상 버틸 가능성이 높다는 경험칙 (미국 과거 데이터 연구에서 출발). 핵심은 ‘원금이 아니라 수익으로 소비’!', ex: '은퇴 자산 5억 × 4% = 연 2,000만원 (월 약 167만원)', math: '필요 자산 = 연 생활비 × 25  (1 ÷ 0.04 = 25)', book: [3] },
+  { t: '퇴직금', en: 'Severance Pay', cat: '연금 · 세금', easy: '1년 이상 일하고 그만둘 때 회사가 주는 돈. 1년마다 최소 30일분의 평균임금!', ex: '월급 300만원으로 10년 근무 → 약 3,000만원', book: [9] },
+  // 파생상품
+  { t: '선물', en: 'Futures', cat: '파생상품', easy: '미래의 정해진 날, 정해진 가격으로 사고팔기로 지금 ‘약속’하는 것. 약속이므로 반드시 지켜야 해요(의무).', ex: '농부가 가을 쌀값을 봄에 미리 정해두면 가격 폭락 걱정이 사라져요 (위험 관리).', book: [16, 17] },
+  { t: '옵션', en: 'Options', cat: '파생상품', easy: '미래에 정해진 가격으로 사고팔 수 있는 ‘권리’. 유리하면 쓰고, 불리하면 버리면 돼요. 대신 권리를 사는 값(프리미엄)을 내요.', ex: '콜옵션 = 살 권리, 풋옵션 = 팔 권리. 선물은 의무, 옵션은 권리!', book: [18] },
+  { t: '커버드콜', en: 'Covered Call', cat: '파생상품', easy: '주식을 가지고 있으면서(덮여 있는, covered) 그 주식을 ‘살 권리(콜옵션)’를 남에게 팔아 프리미엄을 받는 전략. 매달 용돈처럼 수입이 생기지만, 주가가 크게 오르면 그 상승분은 포기해야 해요.', ex: '주가가 오르지도 내리지도 않는 횡보장에서 가장 유리해요. (독후감에 적힌 ‘커브드콜’의 정식 이름이 커버드콜이에요)', book: [15] },
+];
+const CATS = ['전체', '주식 기초', '펀드 · ETF', '채권 · 금리', '위험 · 분산', '연금 · 세금', '파생상품', '📘 독후감'];
+const CAT_ICON = { '주식 기초': '🏢', '펀드 · ETF': '🧺', '채권 · 금리': '📜', '위험 · 분산': '⚖️', '연금 · 세금': '🏖️', '파생상품': '🔮' };
+let dictCat = '전체';
+function renderDict() {
+  const q = $('#d-q').value.trim().toLowerCase();
+  const list = TERMS.filter(x => {
+    if (dictCat === '📘 독후감' ? !x.book : (dictCat !== '전체' && x.cat !== dictCat)) return false;
+    if (!q) return true;
+    return (x.t + x.en + x.easy + x.ex + (x.math || '')).toLowerCase().includes(q);
+  });
+  $('#d-count').textContent = list.length + '개 용어';
+  $('#d-grid').innerHTML = list.map(x => `
+    <details class="term" data-cat="${x.cat}">
+      <summary>
+        <div class="tt"><b>${x.t}</b><i>${x.en}</i><span class="cat">${CAT_ICON[x.cat] || ''} ${x.cat}</span></div>
+        <p class="easy">${x.easy}</p>
+        <span class="tap">예시 보기 ▾</span>
+      </summary>
+      <div class="more">
+        <p><span class="lbl">예시</span>${x.ex}</p>
+        ${x.math ? `<p class="mth"><span class="lbl">📐 수학 연결</span>${x.math}</p>` : ''}
+        ${x.book ? `<p>${x.book.map(n => `<span class="pill book">📘 독후감 #${n}</span>`).join(' ')}</p>` : ''}
+      </div>
+    </details>`).join('') || '<p class="note">검색 결과가 없어요.</p>';
+}
+$('#d-cats').innerHTML = CATS.map(c => `<button class="chip${c === '전체' ? ' on' : ''}" data-cat="${c}">${c}</button>`).join('');
+$('#d-cats').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  dictCat = b.dataset.cat;
+  $$('#d-cats .chip').forEach(x => x.classList.toggle('on', x === b));
+  renderDict();
+});
+$('#d-q').addEventListener('input', renderDict);
+renderDict();
+
+/* ============================================================
+   ① 저축 vs 투자
+   ============================================================ */
+function lab1() {
+  const a = +$('#l1-m').value * 1e4, Y = +$('#l1-y').value;
+  const rd = +$('#l1-d').value / 100, ri = +$('#l1-i').value / 100, inf = +$('#l1-f').value / 100;
+  const mrate = r => Math.pow(1 + r, 1 / 12) - 1;
+  const fv = (r, m) => { if (m <= 0) return 0; const i = mrate(r); return i === 0 ? a * m : a * (1 + i) * (Math.pow(1 + i, m) - 1) / i; };
+  const P = [], D = [], I = [], R = [], L = [];
+  for (let k = 0; k <= Y; k++) {
+    P.push(a * 12 * k); D.push(fv(rd, 12 * k)); I.push(fv(ri, 12 * k));
+    R.push(fv(ri, 12 * k) / Math.pow(1 + inf, k)); L.push(fv(ri, 12 * k - 120));
+  }
+  const late = Y > 10;
+  const fP = P[Y], fD = D[Y], fI = I[Y], fR = R[Y], fL = L[Y];
+  $('#l1-cards').innerHTML =
+    stat('내가 넣은 돈 (원금)', fmtWon(fP)) +
+    stat('🏦 예금으로 모으면', fmtWon(fD), '원금의 ' + (fD / fP).toFixed(2) + '배') +
+    stat('📈 투자로 모으면', fmtWon(fI), '원금의 ' + (fI / fP).toFixed(2) + '배', true) +
+    stat('📈 투자 — 지금 돈의 가치로', fmtWon(fR), '물가 ' + pct(inf) + ' 반영') +
+    (late ? stat('⏰ 10년 늦게 시작하면', fmtWon(fL), '−' + fmtWon(fI - fL)) : '');
+  const series = [
+    { name: '원금', color: '#A3AAB6', data: P, dash: [6, 4], width: 2 },
+    { name: '예금', color: '#2E9E7E', data: D },
+    { name: '투자', color: '#E5566B', data: I, width: 3.2 },
+    { name: '투자(지금 가치)', color: '#7C5CE0', data: R, width: 2.2 },
+  ];
+  if (late) series.push({ name: '10년 늦은 투자', color: '#E8913A', data: L, dash: [2, 5], width: 2.6 });
+  drawChart($('#l1-chart'), { n: Y + 1, series, xFmt: i => i + '년', xLong: i => i + '년 후' });
+  legend($('#l1-legend'), series.map(s => ({ name: s.name === '투자(지금 가치)' ? '투자 (물가를 빼고 본 실제 가치)' : s.name, color: s.color, dash: !!s.dash })));
+
+  const depAfterTax = rd * (1 - 0.154), realDep = (1 + depAfterTax) / (1 + inf) - 1;
+  let txt = `같은 <b>${fmtWon(a)}</b>씩 ${Y}년을 넣어도, 예금과 투자의 차이는 <b>${fmtWon(fI - fD)}</b>이에요. `;
+  txt += realDep < 0
+    ? `게다가 예금 이자에서 이자소득세(15.4%)를 떼면 실제 금리는 <b>${pct(depAfterTax, 2)}</b> — 물가(${pct(inf)})보다 낮아서 <b>구매력이 매년 약 ${pct(-realDep, 2)}씩 줄어들어요.</b> 이것이 독후감 #1 “저축만으로는 한계”의 수학적 이유예요.`
+    : `예금도 세후 금리(${pct(depAfterTax, 2)})가 물가(${pct(inf)})보다 높아 구매력은 지켜지지만, 불어나는 속도에서 투자와 차이가 커요.`;
+  if (late) txt += ` 그리고 <b>시작이 10년 늦으면</b> 넣은 돈은 ${fmtWon(a * 120)} 적을 뿐인데 결과는 ${fmtWon(fI - fL)}이나 적어요. <b>복리의 진짜 재료는 ‘시간’</b>입니다.`;
+  $('#l1-insight').innerHTML = `<div><span class="say-name">복돌이의 한마디</span><p>${txt}</p></div>`;
+
+  const i = mrate(ri), n = 12 * Y;
+  const t72 = ri > 0 ? 72 / (ri * 100) : Infinity, tex = ri > 0 ? Math.log(2) / Math.log(1 + ri) : Infinity;
+  $('#l1-math').innerHTML = `
+    <h4>📐 수학으로 보기 — 적립식 복리는 ‘등비수열의 합’</h4>
+    <p>매달 초 a원을 월이율 i로 n개월 넣으면, 첫 달 돈은 (1+i)ⁿ배, 둘째 달 돈은 (1+i)ⁿ⁻¹배 … 마지막 달 돈은 (1+i)배가 돼요. 모두 더하면</p>
+    <span class="f">S = a(1+i) + a(1+i)² + … + a(1+i)ⁿ = a(1+i)·{(1+i)ⁿ − 1} / i</span>
+    <p>지금 조건: a = ${fmtWon(a)}, 월이율 i = (1+${ri})^(1/12) − 1 ≈ <b>${(i * 100).toFixed(3)}%</b>, n = <b>${n}</b>개월 → S ≈ <b>${fmtWon(fI)}</b></p>
+    <p>🔁 <b>72의 법칙</b>: 연 ${pct(ri)}로 돈이 2배가 되는 데 72 ÷ ${(ri * 100).toFixed(1)} ≈ <b>${isFinite(t72) ? t72.toFixed(1) : '∞'}년</b> (정확히는 log2 / log(1+r) = <b>${isFinite(tex) ? tex.toFixed(2) : '∞'}년</b>)</p>
+    <p>🔥 <b>물가</b>: 물가가 매년 ${pct(inf)} 오르면 ${Y}년 뒤 지금 1만원짜리 물건은 <b>${fmtWon(1e4 * Math.pow(1 + inf, Y))}</b>, 지금의 1억원은 그때 <b>${fmtWon(1e8 / Math.pow(1 + inf, Y))}</b>어치의 힘밖에 없어요.</p>`;
+}
+['l1-m', 'l1-y', 'l1-d', 'l1-i', 'l1-f'].forEach(id => {
+  const f = { 'l1-m': v => manwon(v), 'l1-y': v => v + '년', 'l1-d': v => v.toFixed(1) + '%', 'l1-i': v => v.toFixed(1) + '%', 'l1-f': v => v.toFixed(1) + '%' }[id];
+  bindRange(id, f, lab1);
+});
+lab1();
+
+/* ============================================================
+   ② 포트폴리오 실험실 — 몬테카를로
+   ============================================================ */
+const ASSETS = [
+  { id: 'dep', name: '예금', icon: '🏦', color: '#8a94a6', r: 0.03, v: 0 },
+  { id: 'kr', name: '국내 주식 ETF', icon: '📈', color: '#e5484d', r: 0.06, v: 0.20 },
+  { id: 'us', name: '미국 주식 ETF', icon: '🌎', color: '#2f6fde', r: 0.08, v: 0.17 },
+  { id: 'bond', name: '채권 ETF', icon: '📜', color: '#1f9d6b', r: 0.035, v: 0.06 },
+  { id: 'gold', name: '금', icon: '🥇', color: '#d99a00', r: 0.05, v: 0.15 },
+];
+const CORR = [
+  [1, 0, 0, 0, 0],
+  [0, 1, 0.6, -0.1, 0.05],
+  [0, 0.6, 1, -0.1, 0.05],
+  [0, -0.1, -0.1, 1, 0.25],
+  [0, 0.05, 0.05, 0.25, 1],
+];
+const CHOL = cholesky(CORR);
+const EQUITY = [1, 2]; // 주식 자산 인덱스
+const PRESETS = {
+  '🛡️ 안전형': [40, 5, 10, 40, 5],
+  '⚖️ 균형형': [0, 20, 30, 40, 10],
+  '🔥 공격형': [0, 30, 50, 10, 10],
+  '🎯 한 곳 몰빵': [0, 100, 0, 0, 0],
+};
+
+function buildAlloc(el, prefix, init, onChange) {
+  el.innerHTML = `<p class="alloc-help">오른쪽 %는 <b>실제 적용 비중</b> — 슬라이더 합이 100이 아니어도 비율로 자동 계산돼요.</p>` +
+    ASSETS.map((a, i) => `
+    <div class="arow" style="--c:${a.color}"><span class="a-ic" aria-hidden="true">${a.icon}</span><label class="a-nm" for="${prefix}-${a.id}">${a.name}</label><output id="${prefix}-${a.id}-o" for="${prefix}-${a.id}"></output>
+    <input type="range" min="0" max="100" step="5" value="${init[i]}" id="${prefix}-${a.id}" aria-label="${a.name} 비중" style="--fill:${a.color}"></div>`).join('') +
+    `<div class="stack-wrap"><b>합계</b><div class="stack" id="${prefix}-stack" role="img" aria-label="자산 구성 막대"></div><span class="stack-total">100%</span></div>`;
+  const get = () => {
+    const raw = ASSETS.map(a => +$('#' + prefix + '-' + a.id).value), s = raw.reduce((x, y) => x + y, 0);
+    return s ? raw.map(v => v / s) : raw.map((v, i) => (i === 0 ? 1 : 0));
+  };
+  const paint = () => {
+    const w = get();
+    ASSETS.forEach((a, i) => { $('#' + prefix + '-' + a.id + '-o').textContent = Math.round(w[i] * 100) + '%'; });
+    $('#' + prefix + '-stack').innerHTML = w.map((x, i) => x > 0 ? `<span style="width:${x * 100}%;background:${ASSETS[i].color}" title="${ASSETS[i].name} ${Math.round(x * 100)}%">${x >= 0.12 ? Math.round(x * 100) + '%' : ''}</span>` : '').join('');
+  };
+  const set = arr => { ASSETS.forEach((a, i) => { const el = $('#' + prefix + '-' + a.id); el.value = arr[i]; paintRange(el); }); paint(); };
+  el.addEventListener('input', () => { paint(); onChange && onChange(); });
+  paint();
+  return { get, set };
+}
+function presetChips(el, onPick, extra = {}) {
+  const all = Object.assign({}, extra, PRESETS);
+  el.innerHTML = Object.keys(all).map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join('');
+  el.addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) onPick(all[b.dataset.k], b.dataset.k); });
+}
+
+// TDF: 주식 비중을 처음 → 마지막 해 min(처음, 30%)까지 직선으로 줄임
+function glide(w, y, Y) {
+  const e0 = EQUITY.reduce((s, i) => s + w[i], 0);
+  if (e0 === 0 || Y === 0) return w;
+  const eEnd = Math.min(e0, 0.3), e = e0 + (eEnd - e0) * y / Y;
+  const non0 = 1 - e0, non = 1 - e, out = w.slice();
+  EQUITY.forEach(i => { out[i] = w[i] * e / e0; });
+  if (non0 > 1e-9) w.forEach((x, i) => { if (!EQUITY.includes(i)) out[i] = x * non / non0; });
+  else out[3] = non; // 주식만 있었다면 채권으로
+  return out;
+}
+
+function runMC({ w, init, monthly, years, sims, seed, rebalance, tdf }) {
+  const A = ASSETS.length, rng = mulberry32(seed), nrm = makeNormal(rng);
+  const mu = ASSETS.map(a => Math.log(1 + a.r) / 12), sd = ASSETS.map(a => a.v / Math.sqrt(12));
+  const yearly = Array.from({ length: years + 1 }, () => new Float64Array(sims));
+  const mdds = new Float64Array(sims), paths = [];
+  const z = new Float64Array(A), h = new Float64Array(A);
+  for (let s = 0; s < sims; s++) {
+    let target = tdf ? glide(w, 0, years) : w;
+    for (let a = 0; a < A; a++) h[a] = init * target[a];
+    let nav = 1, peak = 1, mdd = 0;
+    yearly[0][s] = init;
+    for (let y = 0; y < years; y++) {
+      target = tdf ? glide(w, y, years) : w;
+      if (y > 0 && (rebalance || tdf)) {
+        let tot = 0; for (let a = 0; a < A; a++) tot += h[a];
+        for (let a = 0; a < A; a++) h[a] = tot * target[a];
+      }
+      for (let m = 0; m < 12; m++) {
+        for (let a = 0; a < A; a++) z[a] = nrm();
+        let before = 0, after = 0;
+        for (let a = 0; a < A; a++) {
+          before += h[a];
+          let e = 0; for (let k = 0; k <= a; k++) e += CHOL[a][k] * z[k];
+          h[a] *= Math.exp(mu[a] + sd[a] * e);
+          after += h[a];
+        }
+        if (before > 0) {
+          nav *= after / before;
+          if (nav > peak) peak = nav;
+          const dd = 1 - nav / peak; if (dd > mdd) mdd = dd;
+        }
+        for (let a = 0; a < A; a++) h[a] += monthly * target[a];
+      }
+      let tot = 0; for (let a = 0; a < A; a++) tot += h[a];
+      yearly[y + 1][s] = tot;
+    }
+    mdds[s] = mdd;
+    if (s < 3) paths.push(yearly.map(arr => arr[s]));
+  }
+  return { yearly, mdds, paths };
+}
+function summarize(res, contrib) {
+  const fin = Float64Array.from(res.yearly[res.yearly.length - 1]).sort();
+  let loss = 0; fin.forEach(v => { if (v < contrib) loss++; });
+  const mddAvg = res.mdds.reduce((s, x) => s + x, 0) / res.mdds.length;
+  return { fin, med: quantile(fin, 0.5), p10: quantile(fin, 0.1), p90: quantile(fin, 0.9), loss: loss / fin.length, mdd: mddAvg };
+}
+
+const alloc2 = buildAlloc($('#p-alloc'), 'pa', PRESETS['⚖️ 균형형'], () => schedLab2());
+presetChips($('#p-presets'), arr => { alloc2.set(arr); schedLab2(); });
+$('#p-assume').innerHTML = '<thead><tr><th>자산</th><th>연평균 수익률</th><th>변동성(σ)</th></tr></thead><tbody>' +
+  ASSETS.map((a, i) => `<tr><td>${a.icon} ${a.name}</td>
+    <td><input type="number" class="num" style="width:70px" step="0.5" value="${(a.r * 100).toFixed(1)}" data-i="${i}" data-k="r">%</td>
+    <td><input type="number" class="num" style="width:70px" step="1" value="${(a.v * 100).toFixed(0)}" data-i="${i}" data-k="v" ${a.v === 0 ? 'disabled' : ''}>%</td></tr>`).join('') + '</tbody>';
+$('#p-assume').addEventListener('input', e => {
+  const el = e.target; if (!el.dataset.k) return;
+  const v = Math.max(el.dataset.k === 'v' ? 0 : -20, Math.min(60, +el.value || 0)) / 100;
+  ASSETS[+el.dataset.i][el.dataset.k] = v;
+  schedLab2();
+});
+let p2t;
+function schedLab2() { clearTimeout(p2t); p2t = setTimeout(lab2, 180); }
+bindRange('p-init', v => manwon(v), schedLab2);
+bindRange('p-m', v => manwon(v), schedLab2);
+bindRange('p-y', v => v + '년', schedLab2);
+['p-reb', 'p-tdf', 'p-seed'].forEach(id => $('#' + id).addEventListener('change', schedLab2));
+$('#p-reroll').addEventListener('click', () => { $('#p-seed').value = Math.floor(Math.random() * 9000) + 1000; lab2(); });
+
+function lab2() {
+  const w = alloc2.get();
+  const init = +$('#p-init').value * 1e4, monthly = +$('#p-m').value * 1e4, years = +$('#p-y').value;
+  const reb = $('#p-reb').checked, tdf = $('#p-tdf').checked, seed = (Math.abs(+$('#p-seed').value) | 0) || 1;
+  const contrib = init + monthly * 12 * years;
+
+  // 이론값
+  const Er = w.reduce((s, x, i) => s + x * ASSETS[i].r, 0);
+  let varp = 0;
+  for (let i = 0; i < 5; i++) for (let j = 0; j < 5; j++) varp += w[i] * w[j] * CORR[i][j] * ASSETS[i].v * ASSETS[j].v;
+  const sp = Math.sqrt(varp), wavg = w.reduce((s, x, i) => s + x * ASSETS[i].v, 0);
+  $('#p-theory').innerHTML =
+    stat('기대수익률 (연)', pct(Er), 'Σ 비중 × 수익률') +
+    stat('위험 = 표준편차 σ (연)', pct(sp), '1년 결과가 대략 ±이만큼 흔들림') +
+    stat('섞지 않았다면 위험', pct(wavg), '각 자산 σ의 가중평균') +
+    stat('🧺 분산투자로 줄어든 위험', wavg > 0 ? '−' + pct(wavg - sp) : '0%', '상관계수 < 1 덕분', true);
+  $('#p-theory-txt').innerHTML = sp > 0
+    ? `💡 연 수익률은 평균 <b>${pct(Er)}</b> 근처지만, 한 해만 보면 대략 <b>${pct(Er - sp)} ~ ${pct(Er + sp)}</b> 사이(약 68% 확률)에서, 운이 나쁘면 <b>${pct(Er - 2 * sp)}</b>까지도 내려갈 수 있어요 (정규분포의 ±1σ, ±2σ).`
+    : '💡 예금만 담으면 위험(σ)이 0 — 결과가 딱 하나로 정해져요. 대신 기대수익률도 낮아요.';
+
+  const t0 = performance.now();
+  const res = runMC({ w, init, monthly, years, sims: 1000, seed, rebalance: reb, tdf });
+  const S = summarize(res, contrib);
+  const qs = [0.1, 0.25, 0.5, 0.75, 0.9].map(p => res.yearly.map(arr => quantile(Float64Array.from(arr).sort(), p)));
+  const contribLine = res.yearly.map((_, k) => init + monthly * 12 * k);
+
+  $('#p-cards').innerHTML =
+    stat('내가 낸 돈', fmtWon(contrib)) +
+    stat('중앙값 (보통의 미래)', fmtWon(S.med), '원금의 ' + (S.med / contrib).toFixed(2) + '배', true) +
+    stat('운 나쁜 미래 (하위 10%)', fmtWon(S.p10)) +
+    stat('운 좋은 미래 (상위 10%)', fmtWon(S.p90)) +
+    stat('원금 손실 확률', pct(S.loss), '1,000번 중 ' + Math.round(S.loss * 1000) + '번') +
+    stat('평균 최대낙폭', '−' + pct(S.mdd, 0), '가장 아팠던 순간');
+  drawChart($('#p-chart'), {
+    n: years + 1, xFmt: i => i + '년', xLong: i => i + '년 후',
+    bands: [{ lo: qs[0], hi: qs[4], color: 'rgba(124,92,224,.13)' }, { lo: qs[1], hi: qs[3], color: 'rgba(124,92,224,.17)' }],
+    series: [
+      ...res.paths.map((p, k) => ({ name: '샘플' + k, color: '#FF8A8F', data: p, width: 1.3, alpha: 0.7, noTip: true })),
+      { name: '낸 돈', color: '#A3AAB6', data: contribLine, dash: [6, 4], width: 2 },
+      { name: '중앙값', color: '#253046', data: qs[2], width: 3.4 },
+    ],
+    tipExtra: i => [{ c: 'rgba(124,92,224,.55)', t: '상위 10%: ' + fmtWon(qs[4][i]) }, { c: 'rgba(124,92,224,.55)', t: '하위 10%: ' + fmtWon(qs[0][i]) }],
+  });
+  drawHist($('#p-hist'), S.fin, [
+    { v: contrib, color: '#D9465A', label: '낸 돈', dash: [5, 3], row: 0 },
+    { v: S.med, color: '#253046', label: '중앙값', row: 1 },
+  ]);
+
+  // 전략 비교
+  const altReb = !(reb || tdf);
+  const alt = summarize(runMC({ w, init, monthly, years, sims: 600, seed, rebalance: altReb, tdf: false }), contrib);
+  const dep = summarize(runMC({ w: [1, 0, 0, 0, 0], init, monthly, years, sims: 1, seed, rebalance: false, tdf: false }), contrib);
+  const myName = tdf ? '내 전략 (TDF)' : reb ? '내 전략 (리밸런싱 O)' : '내 전략 (그냥 두기)';
+  const altName = altReb ? '같은 비중 + 리밸런싱 O' : '같은 비중 + 그냥 두기';
+  const rows = [[myName, S], [altName, alt], ['🏦 예금 100%', dep]];
+  const bestMed = Math.max(...rows.map(r => r[1].med));
+  $('#p-compare').innerHTML = '<thead><tr><th>전략</th><th>중앙값</th><th>하위10%</th><th>손실확률</th><th>MDD</th></tr></thead><tbody>' +
+    rows.map(([n, s]) => `<tr class="${s.med === bestMed ? 'best' : ''}"><td>${n}</td><td>${fmtShort(s.med)}</td><td>${fmtShort(s.p10)}</td><td>${pct(s.loss, 0)}</td><td>−${pct(s.mdd, 0)}</td></tr>`).join('') + '</tbody>';
+
+  // 해설
+  const eq0 = EQUITY.reduce((s, i) => s + w[i], 0);
+  let ins = `1,000개의 미래 중 절반은 <b>${fmtWon(S.med)}</b>보다 많이, 절반은 적게 모았어요. `;
+  ins += S.p90 / Math.max(S.p10, 1) > 1.8
+    ? `운 좋은 미래와 운 나쁜 미래의 차이가 <b>${(S.p90 / Math.max(S.p10, 1)).toFixed(1)}배</b>나 돼요 — 위험(σ)이 클수록 부채꼴이 넓게 퍼져요. `
+    : `결과의 폭이 비교적 좁아요 — 위험(σ)이 작으면 미래가 예측 가능해지지만 기대수익도 낮아져요. `;
+  if (w[1] > 0.95 || w[2] > 0.95) ins += `<b>한 곳에만 몰빵</b>하면 분산 효과가 사라져요. 다른 자산을 섞어 위험이 얼마나 줄어드는지 비교해 보세요!`;
+  else if (tdf) ins += `TDF는 주식 비중을 <b>${pct(eq0, 0)} → ${pct(Math.min(eq0, 0.3), 0)}</b>로 서서히 줄여요. 은퇴 직전에 폭락을 맞는 위험을 줄이는 대신, 막판 상승도 덜 누려요.`;
+  else ins += `리밸런싱을 켜고 끄며 MDD(최대낙폭)가 어떻게 변하는지 비교해 보세요. 리밸런싱은 수익을 늘리는 마법이라기보다 <b>위험을 계획한 수준으로 유지</b>하는 습관이에요.`;
+  $('#p-insight').innerHTML = `<div><span class="say-name">복돌이의 해석</span><p>${ins}</p></div>`;
+
+  $('#p-math').innerHTML = `
+    <h4>📐 수학으로 보기 — 포트폴리오의 기댓값과 분산</h4>
+    <p>자산 i의 비중을 wᵢ, 기대수익률을 E[Rᵢ], 표준편차를 σᵢ, 두 자산의 상관계수를 ρᵢⱼ라 하면</p>
+    <span class="f">E[R<sub>p</sub>] = Σ wᵢ E[Rᵢ]</span>&nbsp;&nbsp;
+    <span class="f">σ<sub>p</sub>² = Σᵢ Σⱼ wᵢ wⱼ ρᵢⱼ σᵢ σⱼ</span>
+    <p>기댓값은 그냥 ‘가중평균’이지만, 분산에는 <b>ρ(상관계수)</b>가 끼어들어요. ρ가 1보다 작으면 σ<sub>p</sub>는 σ의 가중평균(${pct(wavg)})보다 작아져요 → 지금은 <b>${pct(sp)}</b>. 이것이 ‘공짜 점심’이라 불리는 분산투자의 원리예요.</p>
+    <p>🎲 <b>몬테카를로 시뮬레이션</b>: 매달 각 자산의 수익률을 정규분포(상관관계 반영)에서 무작위로 뽑아 ${years}년 × 12개월 = ${years * 12}번 굴리는 것을 1,000번 반복했어요. (계산 시간 ${Math.round(performance.now() - t0)}ms) 확률과 통계의 ‘큰 수의 법칙’ 덕분에 반복이 많을수록 결과 분포가 안정돼요.</p>`;
+}
+lab2();
+
+/* ============================================================
+   ③ 투자 인생 게임
+   ============================================================ */
+const EVENTS = [
+  { k: 'normal', w: 5, t: '🌤️ 평범한 성장의 해', d: '큰 뉴스 없이 기업들이 꾸준히 돈을 벌었어요.', r: [0.03, 0.08, 0.11, 0.03, 0.02], l: '대부분의 해는 이렇게 조용해요. 매달 꾸준히 적립하는 사람이 결국 이깁니다.' },
+  { k: 'bull', w: 2.5, t: '🚀 강세장', d: '경기가 좋아지고 투자자들이 몰려들며 주가가 크게 올랐어요.', r: [0.03, 0.18, 0.22, 0.03, 0.02], l: '모두가 신날 때일수록 계획한 비중을 지키는지 점검하세요. 많이 오른 자산은 비중이 커져 있어요 → 리밸런싱 타이밍! (📘 #12)' },
+  { k: 'ai', w: 2, t: '🤖 AI 기술 혁신 랠리', d: '인공지능 기업들의 실적이 폭발하며 미국 기술주가 급등했어요.', r: [0.03, 0.15, 0.28, 0.02, 0], l: '어떤 회사가 1등이 될지 맞히기는 어렵지만, 지수 ETF를 사면 혁신 기업의 성장을 자동으로 담을 수 있어요.' },
+  { k: 'chip', w: 1.5, t: '💾 반도체 슈퍼사이클', d: '메모리 반도체 가격이 치솟으며 한국 증시가 크게 올랐어요.', r: [0.03, 0.32, 0.12, 0.03, 0.01], l: '한국 증시는 반도체 비중이 커서 업황에 따라 크게 출렁여요. 한 나라·한 산업에만 기대지 않는 것이 분산투자예요.' },
+  { k: 'hike', w: 1.5, t: '📈 금리 인상 쇼크', d: '물가를 잡으려고 중앙은행이 금리를 빠르게 올렸어요. 주식과 채권이 동시에 하락!', r: [0.04, -0.12, -0.15, -0.10, -0.03], l: '채권도 손실이 날 수 있어요! 금리가 오르면 채권 가격은 내려가고, 만기가 긴 채권일수록(듀레이션↑) 더 많이 떨어져요. 가격 변화 ≈ −듀레이션 × 금리 변화 (📘 #19·20)' },
+  { k: 'cut', w: 1.5, t: '📉 금리 인하', d: '경기를 살리려고 금리를 내렸어요. 이자 부담이 줄어 주식·채권 모두 올랐어요.', r: [0.025, 0.12, 0.15, 0.09, 0.06], l: '금리가 내리면 예전에 발행된(이자를 더 많이 주는) 채권의 인기가 올라 채권 가격이 상승해요. 듀레이션이 길수록 더 많이 올라요.' },
+  { k: 'crisis', w: 0.6, t: '🌪️ 글로벌 금융위기', d: '대형 금융회사가 무너지며 전 세계 증시가 폭락했어요.', r: [0.03, -0.38, -0.35, 0.07, 0.05], l: '이럴 때 채권·금이 포트폴리오를 지켜줘요. 그리고 공포에 팔아버리면 손실이 ‘확정’돼요. 진짜 실력은 이런 해에 드러나요.' },
+  { k: 'bubble', w: 0.6, t: '🫧 거품 붕괴', d: '너무 비싸게 오른 주식들의 거품이 꺼졌어요.', r: [0.03, -0.25, -0.30, 0.05, 0.03], l: '남들이 다 산다고 따라 사면 비싸게 사기 쉬워요. 적립식 투자는 쌀 때 더 많이, 비쌀 때 더 적게 사게 해줘요.' },
+  { k: 'rebound', w: 0, t: '🌱 위기 뒤의 회복장', d: '폭락 뒤 시장이 빠르게 회복했어요.', r: [0.03, 0.35, 0.28, 0.02, -0.02], l: '역사적으로 큰 하락 뒤에는 회복이 따라오곤 했어요. 공포에 시장을 떠난 사람은 이 회복을 놓쳐요.' },
+  { k: 'inflation', w: 1.2, t: '🔥 인플레이션 급등', d: '물가가 크게 올라 같은 돈으로 살 수 있는 물건이 줄었어요.', r: [0.035, -0.08, -0.06, -0.07, 0.18], l: '물가가 오르면 현금의 실제 가치가 줄어요. 금은 대표적인 인플레이션 방어 자산이에요.' },
+  { k: 'war', w: 0.8, t: '⚔️ 지정학적 위기', d: '국제 분쟁으로 불안감이 커지며 안전자산으로 돈이 몰렸어요.', r: [0.03, -0.15, -0.08, 0.04, 0.16], l: '위기 때 금·채권 같은 안전자산이 오르는 경향이 있어요. 서로 다르게 움직이는(상관계수가 낮은) 자산을 섞는 이유!' },
+  { k: 'krwdown', w: 1, t: '💱 원화 약세 (환율 급등)', d: '1달러를 사려면 더 많은 원화가 필요해졌어요. 달러 자산의 원화 가치가 올랐어요.', r: [0.03, -0.05, 0.18, 0.02, 0.14], l: '미국 ETF를 원화로 사면 주가 + 환율 두 가지 영향을 받아요. 환율이 오르면 원화 기준 수익이 커져요.' },
+  { k: 'krwup', w: 1, t: '💴 원화 강세', d: '원화 가치가 올라 해외 자산의 원화 환산 가치가 줄었어요.', r: [0.03, 0.10, -0.04, 0.03, -0.06], l: '환율은 양방향으로 움직여요. 국내·해외 자산을 섞으면 환율 위험도 분산돼요.' },
+  { k: 'flat', w: 2, t: '😴 지루한 횡보장', d: '주가가 오르지도 내리지도 않고 1년 내내 제자리걸음.', r: [0.03, 0.01, 0.02, 0.03, 0.01], l: '이런 시장에선 커버드콜 전략이 유리해요 — 주식을 가진 채로 콜옵션을 팔아 매달 프리미엄을 받기 때문이에요. (📘 #15)' },
+  { k: 'recession', w: 1, t: '🏚️ 경기 침체', d: '기업 실적이 나빠지고 실업이 늘었어요. 중앙은행은 금리를 내릴 준비를 해요.', r: [0.025, -0.18, -0.14, 0.08, 0.05], l: '경기 침체 때는 채권이 주식의 하락을 일부 막아줘요. 주식과 채권을 섞는 이유!' },
+  { k: 'dividend', w: 1, t: '💰 배당 확대 & 밸류업', d: '한국 기업들이 주주에게 배당을 늘리기로 했어요.', r: [0.03, 0.15, 0.08, 0.03, 0], l: '개인 투자자는 시세차익과 배당으로 수익을 얻어요. 배당을 다시 투자하면 복리 효과가 커져요. (📘 #14)' },
+];
+const EV_TOTAL = EVENTS.reduce((s, e) => s + e.w, 0);
+let G = null;
+const gAlloc = buildAlloc($('#g-alloc'), 'ga', [0, 20, 30, 40, 10], null);
+presetChips($('#g-presets'), arr => gAlloc.set(arr));
+
+function gDraw(prevKey) {
+  // 학급 전체가 같은 시장을 겪도록 매 턴 난수를 정확히 6개씩 사용
+  const uReb = G.rng(), uEv = G.rng(), noise = [0, 1, 2, 3].map(() => (G.rng() - 0.5) * 0.04);
+  let ev;
+  if ((prevKey === 'crisis' || prevKey === 'bubble') && uReb < 0.6) ev = EVENTS.find(e => e.k === 'rebound');
+  else {
+    let acc = 0, x = uEv * EV_TOTAL;
+    ev = EVENTS.find(e => (acc += e.w) > x) || EVENTS[0];
+  }
+  const r = ev.r.map((v, i) => (i === 0 ? v : v + noise[i - 1]));
+  return { ev, r };
+}
+function gStart() {
+  const seed = (Math.abs(+$('#g-seed').value) | 0) || 1;
+  G = {
+    seed, rng: mulberry32(seed), years: +$('#g-years').value, monthly: +$('#g-monthly').value,
+    turn: 0, me: 0, steady: 0, dep: 0, contrib: 0, init: null, prevW: null, prevKey: null, lastMyRet: 0,
+    changes: 0, panic: 0, hist: { me: [0], steady: [0], dep: [0], c: [0] }, log: [], best: null, worst: null,
+  };
+  $('#g-setup').hidden = true; $('#g-play').hidden = false; $('#g-endwrap').hidden = true;
+  $('#game').classList.add('playing');
+  $('#g-next').disabled = false;
+  $('#g-last').innerHTML = '';
+  $('#g-event').innerHTML = `<div class="ev-head"><span class="ev-tag">올해의 시장 뉴스</span><span class="ev-age">25세 · 새해 첫날</span></div>
+    <h3 class="ev-title">첫 월급을 받았어요! 🎉</h3>
+    <p class="ev-desc">매달 <b>${fmtWon(G.monthly)}</b>씩, 1년에 <b>${fmtWon(G.monthly * 12)}</b>을 투자할 거예요. 올해의 바구니 비중을 정하고 <b>1년 보내기</b>를 누르세요.<br>올해 시장이 어떻게 될지는 <b>아무도 몰라요.</b> (선생님도요!)</p>
+    <div class="say"><span class="pig" aria-hidden="true"></span><div><span class="say-name">복돌이의 해설</span><p>첫해에 고른 비중은 유령 투자자 ‘👻 꾸준이’가 끝까지 그대로 따라 해요. 신중하게!</p></div></div>`;
+  gPaint();
+  // 게임 화면 윗부분을 메뉴 바로 아래로 → 왼쪽 계획 카드와 ‘1년 보내기’가 한 화면에 보이도록
+  const navH = $('.tabs').offsetHeight || 62;
+  window.scrollTo({ top: Math.max(0, $('#g-play').getBoundingClientRect().top + window.scrollY - navH - 12), behavior: 'smooth' });
+}
+function gStep() {
+  if (!G || G.turn >= G.years) return;
+  const w = gAlloc.get(), C = G.monthly * 12;
+  if (G.turn === 0) G.init = w.slice();
+  else {
+    const diff = w.reduce((s, x, i) => s + Math.abs(x - G.prevW[i]), 0) / 2;
+    if (diff > 0.01) G.changes++;
+    const eqNow = EQUITY.reduce((s, i) => s + w[i], 0), eqPrev = EQUITY.reduce((s, i) => s + G.prevW[i], 0);
+    if (G.lastMyRet < 0 && eqPrev - eqNow >= 0.2) G.panic++;
+  }
+  const { ev, r } = gDraw(G.prevKey);
+  const myRet = w.reduce((s, x, i) => s + x * r[i], 0);
+  const stRet = G.init.reduce((s, x, i) => s + x * r[i], 0);
+  // 1년 납입금은 연초에 넣고, 1년 동안 함께 굴러간다고 단순화
+  G.me = (G.me + C) * (1 + myRet);
+  G.steady = (G.steady + C) * (1 + stRet);
+  G.dep = (G.dep + C) * (1 + r[0]);
+  G.contrib += C;
+  G.turn++;
+  G.hist.me.push(G.me); G.hist.steady.push(G.steady); G.hist.dep.push(G.dep); G.hist.c.push(G.contrib);
+  G.log.unshift({ age: 24 + G.turn, ev, r, myRet, w: w.slice(), me: G.me });
+  if (!G.best || myRet > G.best.myRet) G.best = { age: 24 + G.turn, t: ev.t, myRet };
+  if (!G.worst || myRet < G.worst.myRet) G.worst = { age: 24 + G.turn, t: ev.t, myRet };
+  G.prevW = w.slice(); G.prevKey = ev.k; G.lastMyRet = myRet;
+
+  const ud = v => (v >= 0 ? 'up' : 'down');
+  $('#g-event').innerHTML = `<div class="ev-head"><span class="ev-tag">올해의 시장 뉴스</span><span class="ev-age">${23 + G.turn + 1}세에 일어난 일</span></div>
+    <h3 class="ev-title">${ev.t}</h3>
+    <p class="ev-desc">${ev.d}</p>
+    <div class="ev-rets">${ASSETS.map((a, i) => `<div class="ev-ret"><span class="nm"><span class="dot" style="background:${a.color}"></span>${a.icon} ${a.name}</span><b class="${ud(r[i])}">${signPct(r[i])}</b></div>`).join('')}</div>
+    <div class="ev-mine">
+      <div class="me"><small>🙋 내 바구니 수익률</small><b class="${ud(myRet)}">${signPct(myRet)}</b></div>
+      <div><small>👻 꾸준이 수익률</small><b class="${ud(stRet)}">${signPct(stRet)}</b></div>
+    </div>
+    <div class="say"><span class="pig" aria-hidden="true"></span><div><span class="say-name">복돌이의 해설</span><p>${ev.l}</p></div></div>
+    ${myRet < -0.1 && G.turn < G.years ? '<div class="warn">😱 많이 떨어졌죠? 지금 주식을 전부 팔고 싶은 마음이 든다면 — 그게 바로 ‘공포 매도’ 유혹이에요. 정말 팔지, 계획대로 갈지 정해 보세요.</div>' : ''}`;
+  $('#g-last').innerHTML = `<b>${23 + G.turn + 1}세</b> ${ev.t} → 내 수익률 <b class="${ud(myRet)}">${signPct(myRet)}</b>`;
+  gPaint();
+  if (G.turn >= G.years) gEnd();
+}
+function gPaint() {
+  const age = 25 + G.turn;
+  $('#g-age').textContent = (G.turn >= G.years ? age - 1 + '세 · 끝!' : age + '세');
+  $('#g-turn').textContent = Math.min(G.turn + 1, G.years) + ' / ' + G.years + '년';
+  $('#g-prog').style.width = (G.turn / G.years * 100) + '%';
+  $('#g-cards').innerHTML =
+    stat('🙋 나의 자산', fmtWon(G.me), G.contrib ? '원금 대비 ' + signPct(G.me / G.contrib - 1) : '', true) +
+    stat('👻 꾸준이', fmtWon(G.steady), G.contrib ? signPct(G.steady / G.contrib - 1) : '') +
+    stat('🏦 예금이', fmtWon(G.dep), G.contrib ? signPct(G.dep / G.contrib - 1) : '') +
+    stat('낸 돈', fmtWon(G.contrib));
+  const n = G.hist.me.length;
+  drawChart($('#g-chart'), {
+    // 점 0 = 시작(25세 초), 점 k = (24+k)세 말
+    n, xFmt: i => (i === 0 ? '시작' : (24 + i) + '세'), xLong: i => (i === 0 ? '시작 (25세 초)' : (24 + i) + '세 말'),
+    series: [
+      { name: '낸 돈', color: '#C9CDD5', data: G.hist.c, dash: [5, 4], width: 2 },
+      { name: '🏦 예금이', color: '#9AA3B2', data: G.hist.dep, width: 2.2 },
+      { name: '👻 꾸준이', color: '#4C7BD9', data: G.hist.steady, width: 2.6 },
+      { name: '🙋 나', color: '#E5566B', data: G.hist.me, width: 3.4, points: true },
+    ],
+  });
+  $('#g-log').innerHTML = '<thead><tr><th>나이</th><th>사건</th><th>내 바구니 (예·국·미·채·금 %)</th><th>수익률</th><th>자산</th></tr></thead><tbody>' +
+    (G.log.length ? G.log.map(x => `<tr><td>${x.age}세</td><td>${x.ev.t}</td><td>${x.w.map(v => Math.round(v * 100)).join(' · ')}</td><td class="${x.myRet >= 0 ? 'up' : 'down'}">${signPct(x.myRet)}</td><td>${fmtShort(x.me)}</td></tr>`).join('')
+      : '<tr><td colspan="5" style="text-align:center;color:#999">아직 기록이 없어요</td></tr>') + '</tbody>';
+}
+function gEnd() {
+  $('#g-next').disabled = true;
+  const ranks = [['🙋 나', G.me], ['👻 꾸준이', G.steady], ['🏦 예금이', G.dep]].sort((a, b) => b[1] - a[1]);
+  const medal = ['🥇', '🥈', '🥉'];
+  const beat = G.me >= G.steady;
+  const msgs = [];
+  msgs.push(beat
+    ? `👏 <b>꾸준이보다 ${fmtWon(G.me - G.steady)} 더</b> 모았어요! 다만 그게 실력인지 운인지는 다른 시드 번호로 몇 번 더 해봐야 알 수 있어요.`
+    : `👻 비중을 그대로 둔 <b>꾸준이가 ${fmtWon(G.steady - G.me)} 더</b> 모았어요. 시장을 예측해 비중을 바꾸는 것은 생각보다 어려워요.`);
+  msgs.push(`비중을 바꾼 횟수: <b>${G.changes}번</b>` + (G.panic ? ` · 하락한 해 직후 주식 비중을 크게 줄인 ‘공포 매도’: <b>${G.panic}번</b> 😱` : ' · 공포 매도 0번 👍'));
+  msgs.push(`최고의 해: ${G.best.age}세 ${G.best.t} (${signPct(G.best.myRet)}) / 최악의 해: ${G.worst.age}세 ${G.worst.t} (${signPct(G.worst.myRet)})`);
+  msgs.push(`예금만 했을 때보다 <b>${fmtWon(G.me - G.dep)}</b> ${G.me >= G.dep ? '더 모았어요' : '적어요'}. 내가 낸 돈 ${fmtWon(G.contrib)} → <b>${(G.me / G.contrib).toFixed(2)}배</b>`);
+  $('#g-endwrap').hidden = false;
+  $('#g-endwrap').className = 'panel endcard';
+  const ud = v => (v >= 0 ? 'up' : 'down');
+  $('#g-endwrap').innerHTML = `
+    <div class="end-head"><span class="pig" aria-hidden="true"></span><div><span class="ev-tag">게임 결과</span>
+      <h3>🏁 ${24 + G.years}세 말, 게임 종료!</h3>
+      <p>내가 낸 돈 <b>${fmtWon(G.contrib)}</b> → 최종 자산 <b>${fmtWon(G.me)}</b> (원금의 ${(G.me / G.contrib).toFixed(2)}배)</p></div></div>
+    <ol class="rank">${ranks.map((r, i) => `<li class="${r[0] === '🙋 나' ? 'me' : ''}"><span class="medal">${medal[i]}</span><span class="who">${r[0]}</span><b>${fmtWon(r[1])}</b></li>`).join('')}</ol>
+    <div class="end-grid">
+      <div class="mini"><small>최고의 해</small><b>${G.best.age}세 ${G.best.t}</b><em class="${ud(G.best.myRet)}">${signPct(G.best.myRet)}</em></div>
+      <div class="mini"><small>최악의 해</small><b>${G.worst.age}세 ${G.worst.t}</b><em class="${ud(G.worst.myRet)}">${signPct(G.worst.myRet)}</em></div>
+      <div class="mini"><small>비중 변경</small><b>${G.changes}번</b></div>
+      <div class="mini"><small>공포 매도</small><b>${G.panic}번 ${G.panic ? '😱' : '👍'}</b></div>
+    </div>
+    <ul class="end-msgs">${msgs.map(m => `<li>${m}</li>`).join('')}</ul>
+    <div class="share">📝 <b>결과 공유용 한 줄</b>: 시드 ${G.seed} · ${G.years}년 · 최종 ${fmtWon(G.me)} (원금 ${(G.me / G.contrib).toFixed(2)}배) · 변경 ${G.changes}회 · 공포매도 ${G.panic}회</div>
+    <p class="think">🤔 <b>생각해 보기</b>: 이 돈이 연금저축 계좌였다면 세액공제와 과세이연으로 얼마나 더 불어났을까요? → <a href="#pension" data-goto="pension">④ 연금 계좌 탭에서 확인!</a></p>`;
+  $('#g-last').innerHTML = `🏁 게임 끝! 오른쪽(모바일은 아래) 결과를 확인하세요.`;
+  $('#g-endwrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  confetti(24);
+}
+$('#g-start').addEventListener('click', gStart);
+$('#g-next').addEventListener('click', gStep);
+$('#g-reset').addEventListener('click', () => { G = null; $('#g-setup').hidden = false; $('#g-play').hidden = true; $('#game').classList.remove('playing'); window.scrollTo({ top: 0 }); });
+
+/* ============================================================
+   ④ 연금 계좌 & 4% 룰
+   ============================================================ */
+const GEN_TAX = 0.154, PEN_TAX = 0.055, EARLY_TAX = 0.165, CREDIT_LIMIT = 6e6;
+let lastPension = 0;
+function pensionSim() {
+  const m = +$('#pn-m').value * 1e4, Y = +$('#pn-y').value, r = +$('#pn-r').value / 100;
+  const cr = +$('#pn-c').value, reinv = $('#pn-reinv').checked;
+  const A = m * 12, elig = Math.min(A, CREDIT_LIMIT), refund = elig * cr;
+  let gen = 0, pen = 0, penNoRefund = 0, contrib = 0, nonDed = 0, refundTot = 0, refundCash = 0;
+  const sG = [0], sP = [0], sC = [0];
+  for (let y = 0; y < Y; y++) {
+    contrib += A; nonDed += A - elig;
+    gen += A; gen += gen * r * (1 - GEN_TAX);
+    let add = A;
+    if (y > 0) { // 작년 납입분의 환급금은 올해 연말정산 후 들어옴
+      refundTot += refund;
+      if (reinv) { add += refund; nonDed += refund; } else refundCash += refund;
+    }
+    pen = (pen + add) * (1 + r);
+    penNoRefund = (penNoRefund + A) * (1 + r);
+    sG.push(gen); sP.push(pen); sC.push(contrib);
+  }
+  refundTot += refund; refundCash += refund; // 마지막 해 환급금 (현금으로 받음)
+  const taxable = Math.max(0, pen - nonDed);
+  const penTax = taxable * PEN_TAX, penAfter = pen - penTax + refundCash;
+  const earlyAfter = pen - taxable * EARLY_TAX + refundCash;
+  lastPension = penAfter;
+
+  $('#pn-cards').innerHTML =
+    stat('낸 돈', fmtWon(contrib)) +
+    stat('일반 계좌 (세후)', fmtWon(gen)) +
+    stat('연금저축 (연금으로 받을 때, 세후)', fmtWon(penAfter), '+' + fmtWon(penAfter - gen) + ' 더', true) +
+    stat('연금저축 중도 해지 시', fmtWon(earlyAfter), '기타소득세 16.5%');
+  drawChart($('#pn-chart'), {
+    n: Y + 1, xFmt: i => i + '년', xLong: i => i + '년 차',
+    series: [
+      { name: '낸 돈', color: '#A3AAB6', data: sC, dash: [6, 4], width: 2 },
+      { name: '일반 계좌', color: '#9AA3B2', data: sG, width: 2.6 },
+      { name: '연금저축', color: '#7C5CE0', data: sP, width: 3.2 },
+    ],
+  });
+
+  // 3단 혜택 분해 (단순화)
+  const deferOnly = penNoRefund - (penNoRefund - contrib) * GEN_TAX; // 세금을 마지막에 15.4%로 한 번 낸다면
+  const effDefer = deferOnly - gen;
+  const effCredit = (pen - penNoRefund) + refundCash;
+  // 나머지 = 수령 시 세금 차이 (일반 15.4% vs 연금 5.5%, 단 공제받은 원금도 과세 대상) → 합계가 정확히 세후 금액
+  const effLow = penAfter - (gen + effDefer + effCredit);
+  const bars = [
+    ['일반 계좌', gen, '#8a94a6'],
+    ['① 과세이연', effDefer, '#2f6fde'],
+    ['② 세액공제', effCredit, '#1f9d6b'],
+    ['③ 저율과세', effLow, '#e9822a'],
+  ];
+  const maxV = Math.max(gen + Math.max(0, effDefer) + Math.max(0, effCredit) + Math.max(0, effLow), 1);
+  let acc = 0;
+  $('#pn-water').innerHTML = bars.map(([n, v, c], k) => {
+    const wdt = Math.abs(v) / maxV * 100, left = (k === 0 ? 0 : (v >= 0 ? acc : acc + v)) / maxV * 100;
+    acc += v;
+    return `<div class="row"><span>${n}</span><div style="position:relative;height:18px"><div class="bar" style="position:absolute;left:${left}%;width:${wdt}%;background:${v >= 0 ? c : '#d9434a'}"></div></div><b style="text-align:right">${k && v >= 0 ? '+' : ''}${fmtShort(v)}</b></div>`;
+  }).join('') + `<div class="row" style="border-top:1px solid var(--line);padding-top:6px"><b>연금저축 세후</b><div></div><b style="text-align:right">= ${fmtShort(penAfter)}</b></div>
+    <p class="note" style="margin-top:4px">③은 ‘일반 계좌 세율 15.4%’ 대신 ‘연금소득세 5.5%’를 내서 아낀 금액이에요. 단, 세액공제를 받은 원금도 꺼낼 때 5.5% 과세 대상이라 그만큼은 빠져 있어요.</p>`;
+
+  $('#pn-table').innerHTML = `<thead><tr><th>항목</th><th>일반 계좌</th><th>연금저축</th></tr></thead><tbody>
+    <tr><td>총 납입액</td><td>${fmtWon(contrib)}</td><td>${fmtWon(contrib)}</td></tr>
+    <tr><td>세액공제 환급 (누적)</td><td>-</td><td>${fmtWon(refundTot)} <span class="hint">(연 ${fmtWon(refund)})</span></td></tr>
+    <tr><td>운용 중 세금</td><td>매년 수익의 15.4%</td><td>없음 (과세이연)</td></tr>
+    <tr><td>최종 평가액</td><td>${fmtWon(gen)}</td><td>${fmtWon(pen)}${!reinv ? ` <span class="hint">+ 환급 현금 ${fmtWon(refundCash)}</span>` : ''}</td></tr>
+    <tr><td>받을 때 세금</td><td>이미 냄</td><td>${fmtWon(penTax)} <span class="hint">(5.5%)</span></td></tr>
+    <tr class="best"><td>세후 최종 금액</td><td>${fmtWon(gen)}</td><td>${fmtWon(penAfter)}</td></tr></tbody>`;
+  $('#pn-insight').innerHTML = `똑같은 돈을 똑같은 수익률로 굴렸는데 <b>계좌만 바꿔도 ${fmtWon(penAfter - gen)}</b> 차이가 나요. ` +
+    (A > CREDIT_LIMIT ? `연 납입액이 600만원을 넘는 부분은 세액공제를 못 받으니, 초과분은 IRP(합산 900만원)나 ISA를 함께 쓰는 것도 방법이에요. ` : '') +
+    `단, 중간에 깨면 <b>16.5%</b>를 내야 해서 혜택이 크게 줄어요 → “가능하면 연금으로 수령” (📘 #7)`;
+
+  // 수학: 과세이연 공식
+  const n = Y, g = Math.pow(1 + r, n);
+  const yearlyTax = 100 * Math.pow(1 + r * (1 - GEN_TAX), n), lateTax = 100 * (g - GEN_TAX * (g - 1));
+  $('#pn-math').innerHTML = `<h4>📐 수학으로 보기 — 과세이연은 왜 유리할까?</h4>
+    <p>100만원을 연 ${pct(r)}로 ${n}년 굴린다고 해요. 세율 t = 15.4%</p>
+    <p>• 매년 수익에 세금을 떼면 실제 수익률은 r(1−t) → <span class="f">100 × (1 + r(1−t))ⁿ = ${yearlyTax.toFixed(1)}만원</span></p>
+    <p>• 세금을 마지막에 한 번만 내면 → <span class="f">100 × {(1+r)ⁿ − t((1+r)ⁿ − 1)} = ${lateTax.toFixed(1)}만원</span></p>
+    <p>세율은 똑같은데 <b>${(lateTax - yearlyTax).toFixed(1)}만원</b> 차이! 떼어갈 세금까지 ${n}년 동안 복리로 굴러갔기 때문이에요 (📘 #5). 여기에 세율 자체가 5.5%로 낮아지고(저율과세), 넣을 때 세금까지 돌려받으니(세액공제) 연금저축은 ‘3단 혜택’이라 불려요.</p>`;
+}
+['pn-m', 'pn-y', 'pn-r'].forEach(id => bindRange(id, { 'pn-m': v => manwon(v), 'pn-y': v => v + '년', 'pn-r': v => v.toFixed(1) + '%' }[id], pensionSim));
+['pn-c', 'pn-reinv'].forEach(id => $('#' + id).addEventListener('change', pensionSim));
+pensionSim();
+
+function withdrawSim() {
+  const B0 = Math.max(0, +$('#wd-b').value || 0) * 1e4, age0 = +$('#wd-age').value;
+  const rate = +$('#wd-rate').value / 100, r = +$('#wd-r').value / 100, inf = +$('#wd-inf').value / 100, N = 50;
+  const sim = rt => {
+    let B = B0, W = B0 * rt, lasted = null, total = 0;
+    const bal = [B0], wds = [0];
+    for (let y = 1; y <= N; y++) {
+      const w = Math.min(W, B);
+      B -= w; total += w; B *= 1 + r;
+      if (B < 1 && lasted === null && W > 0) { lasted = y; B = 0; }
+      bal.push(B); wds.push(w); W *= 1 + inf;
+    }
+    return { bal, wds, lasted, total };
+  };
+  const main = sim(rate);
+  const refs = [0.03, 0.06].filter(x => Math.abs(x - rate) > 1e-9).map(x => ({ x, s: sim(x) }));
+  const W1 = B0 * rate, taxRate = age0 < 70 ? 0.055 : age0 < 80 ? 0.044 : 0.033;
+  $('#wd-cards').innerHTML =
+    stat('첫해 인출액', fmtWon(W1), '월 ' + fmtWon(W1 / 12), true) +
+    stat('자산이 버티는 기간', main.lasted ? main.lasted + '년' : N + '년 이상', main.lasted ? (age0 + main.lasted) + '세에 바닥' : (age0 + N) + '세까지 OK') +
+    stat('50년간 총 인출액', fmtWon(main.total)) +
+    stat('첫해 연금소득세', W1 <= 1.5e7 ? (taxRate * 100).toFixed(1) + '%' : '선택 필요', W1 <= 1.5e7 ? '연 1,500만원 이하 → 저율과세' : '1,500만원 초과 → 16.5% 분리 or 종합');
+  const series = [
+    ...refs.map(o => ({ name: '인출률 ' + pct(o.x, 0), color: o.x < rate ? '#1f9d6b' : '#d9434a', data: o.s.bal, dash: [5, 4], width: 1.8, alpha: 0.75 })),
+    { name: '인출률 ' + pct(rate, 1), color: '#7C5CE0', data: main.bal, width: 3.2 },
+  ];
+  drawChart($('#wd-chart'), {
+    n: N + 1, series, xFmt: i => (age0 + i) + '세', xLong: i => (age0 + i) + '세 (은퇴 ' + i + '년 차)',
+    tipExtra: i => [{ c: '#e9822a', t: '그해 인출액(' + pct(rate, 1) + '): ' + fmtWon(main.wds[i]) }],
+  });
+  legend($('#wd-legend'), series.map(s => ({ name: s.name + ' 남은 자산', color: s.color, dash: !!s.dash })));
+  let t = `은퇴 자산 ${fmtWon(B0)}에서 첫해 <b>${pct(rate, 1)}</b>(${fmtWon(W1)})를 꺼내 쓰고 이후 물가(${pct(inf)})만큼 늘려 쓰면, `;
+  t += main.lasted ? `<b>${main.lasted}년 뒤(${age0 + main.lasted}세)</b>에 자산이 바닥나요.` : `<b>50년이 지나도</b> 자산이 남아요.`;
+  t += rate <= r - inf + 1e-9 ? ' 인출률이 ‘수익률 − 물가’ 이하라 원금을 거의 건드리지 않아요 → <b>“수익으로 소비한다”</b>는 4% 룰의 핵심 (📘 #3).' : ' 인출률이 ‘수익률 − 물가’보다 커서 조금씩 원금을 헐어 쓰게 돼요.';
+  if (W1 > 1.5e7) t += ` <br>⚠️ 연간 사적연금 수령액이 1,500만원을 넘으면 저율과세(3.3~5.5%) 대신 16.5% 분리과세나 종합과세를 선택해야 해요. 독후감 메모처럼 <b>연 1,000만원대로 나눠 받는 것</b>이 세금 면에서 유리할 수 있어요.`;
+  $('#wd-insight').innerHTML = '💡 ' + t;
+}
+['wd-age', 'wd-rate', 'wd-r', 'wd-inf'].forEach(id => bindRange(id, { 'wd-age': v => v + '세', 'wd-rate': v => v.toFixed(1) + '%', 'wd-r': v => v.toFixed(1) + '%', 'wd-inf': v => v.toFixed(1) + '%' }[id], withdrawSim));
+$('#wd-b').addEventListener('input', withdrawSim);
+$('#wd-pull').addEventListener('click', () => { $('#wd-b').value = Math.round(lastPension / 1e4); withdrawSim(); });
+withdrawSim();
+
+function needCalc() {
+  const m = Math.max(0, +$('#need-m').value || 0) * 1e4;
+  $('#need-out').innerHTML = `연 생활비 ${fmtWon(m * 12)} × 25 = <b style="color:var(--purple);font-size:20px">${fmtWon(m * 12 * 25)}</b> 의 은퇴 자산이 필요해요. <span class="hint">(4% 룰: 1 ÷ 0.04 = 25배)</span>`;
+}
+$('#need-m').addEventListener('input', needCalc); needCalc();
+
+function retireCalc() {
+  const pay = Math.max(0, +$('#rt-pay').value || 0) * 1e4, y = Math.max(0, +$('#rt-y').value || 0);
+  const daily = pay * 12 / 365, sev = daily * 30 * y;
+  $('#rt-out').innerHTML = `1일 평균임금 ≈ ${fmtWon(daily)} → 퇴직금 ≈ ${fmtWon(daily)} × 30일 × ${y}년 = <b style="font-size:18px">${fmtWon(sev)}</b><br><span class="hint">이 돈은 IRP 계좌로 들어가요. 바로 쓰지 않고 연금으로 받으면 퇴직소득세도 30~40% 줄여줘요.</span>`;
+}
+['rt-pay', 'rt-y'].forEach(id => $('#' + id).addEventListener('input', retireCalc)); retireCalc();
+
+function isaCalc() {
+  const amt = Math.max(0, +$('#isa-amt').value || 0) * 1e4, c = +$('#isa-c').value;
+  const base = Math.min(amt * 0.1, 3e6), back = base * c;
+  $('#isa-out').innerHTML = `추가 공제 대상 = min(${fmtWon(amt)} × 10%, 300만원) = ${fmtWon(base)}<br>→ 돌려받는 세금 ≈ ${fmtWon(base)} × ${(c * 100).toFixed(1)}% = <b style="font-size:18px">${fmtWon(back)}</b>`;
+}
+$('#isa-amt').addEventListener('input', isaCalc); $('#isa-c').addEventListener('change', isaCalc); isaCalc();
+
+/* ============================================================
+   ✏️ 퀴즈 & 활동지
+   ============================================================ */
+const QUIZ = [
+  { q: '연금저축펀드에서 수익이 나도 연금을 받을 때까지 세금을 미뤄주는 혜택은?', o: ['세액공제', '과세이연', '분리과세', '비과세'], a: 1, e: '과세이연 = 세금을 ‘나중에’ 내는 것. 낼 세금까지 굴러가며 복리 효과가 커져요. (📘 #5)' },
+  { q: '시장 금리가 오르면 이미 발행된 장기채권의 가격은?', o: ['오른다', '변하지 않는다', '내린다', '0이 된다'], a: 2, e: '금리↑ → 채권 가격↓. 만기가 길수록(듀레이션↑) 더 크게 내려가요. (📘 #19·20)' },
+  { q: '듀레이션이 8인 채권이 있어요. 금리가 1%p 오르면 가격은 약 몇 % 변할까요?', o: ['+8%', '−1%', '−8%', '−0.8%'], a: 2, e: '가격 변화율 ≈ −D × Δ금리 = −8 × 1% = −8%' },
+  { q: '은퇴 자산 5억원, 4% 룰을 따르면 첫해 인출액은?', o: ['500만원', '2,000만원', '4,000만원', '5,000만원'], a: 1, e: '5억 × 0.04 = 2,000만원 (월 약 167만원). (📘 #3)' },
+  { q: '연금저축을 55세 전에 중도 해지하면 세액공제 받은 원금과 수익에 붙는 세율은?', o: ['3.3%', '5.5%', '15.4%', '16.5%'], a: 3, e: '기타소득세 16.5%! 그래서 가능하면 연금으로 받는 게 좋아요. (📘 #7)' },
+  { q: '‘리밸런싱’에 대한 설명으로 옳은 것은?', o: ['많이 오른 자산을 더 사는 것', '비중을 원래 목표대로 다시 맞추는 것', '모든 자산을 팔고 현금화하는 것', '매달 같은 금액을 사는 것'], a: 1, e: '오른 자산은 조금 팔고, 덜 오른 자산은 사서 목표 비중으로 되돌려요. 1년에 한 번이면 충분! (📘 #12)' },
+  { q: 'TDF의 T·D는 무엇의 약자일까요?', o: ['Total Dividend', 'Target Date', 'Tax Deferral', 'Trading Day'], a: 1, e: 'Target Date Fund — 은퇴 예상 연도에 맞춰 자동으로 자산 비중을 조절해요. (📘 #13)' },
+  { q: 'ETF의 NAV가 10,000원인데 시장에서 10,200원에 거래된다면 괴리율은?', o: ['−2%', '+0.2%', '+2%', '+20%'], a: 2, e: '(10,200 − 10,000) ÷ 10,000 × 100 = +2%. 제값보다 2% 비싸게 사는 셈이에요. (📘 #22)' },
+  { q: '상관계수가 1보다 작은 두 자산을 섞으면 포트폴리오의 위험(표준편차)은?', o: ['각 자산 위험의 가중평균보다 커진다', '가중평균과 같다', '가중평균보다 작아진다', '항상 0이 된다'], a: 2, e: 'σₚ² = Σ Σ wᵢwⱼρᵢⱼσᵢσⱼ 에서 ρ < 1이면 위험이 줄어요. 분산투자의 원리!' },
+  { q: '72의 법칙에 따르면 연 6% 복리로 돈이 2배가 되는 데 약 몇 년?', o: ['6년', '12년', '18년', '72년'], a: 1, e: '72 ÷ 6 = 12년. 정확히는 log2 / log1.06 ≈ 11.9년.' },
+  { q: '선물과 옵션의 차이로 옳은 것은?', o: ['선물은 권리, 옵션은 의무', '선물은 의무, 옵션은 권리', '둘 다 의무', '둘 다 권리'], a: 1, e: '선물은 반드시 지켜야 하는 ‘약속’, 옵션은 쓸지 말지 고를 수 있는 ‘권리’. (📘 #17·18)' },
+  { q: 'ISA 만기 자금을 60일 안에 연금저축으로 옮기면 받을 수 있는 추가 세액공제 대상 금액의 최대 한도는?', o: ['100만원', '200만원', '300만원', '600만원'], a: 2, e: '전환 금액의 10%, 최대 300만원까지 추가로 세액공제 대상이 돼요. (📘 #6)' },
+  { q: '주가가 오르지도 내리지도 않는 횡보장에서 가장 유리한 전략은?', o: ['커버드콜', '레버리지 투자', '공매도', '몰빵 투자'], a: 0, e: '주식을 보유하며 콜옵션을 팔아 프리미엄을 받는 커버드콜은 횡보장에서 빛나요. (📘 #15)' },
+];
+let qzAnswered = {};
+function renderQuiz() {
+  $('#qz-total').textContent = QUIZ.length;
+  $('#qz-list').innerHTML = QUIZ.map((x, i) => `
+    <div class="q" data-i="${i}"><h4>Q${i + 1}. ${x.q}</h4>
+      <div class="opts">${x.o.map((o, j) => `<button class="opt" type="button" data-j="${j}">${'①②③④'[j]} ${o}</button>`).join('')}</div>
+      <div class="explain" hidden>${x.e}</div></div>`).join('');
+  qzAnswered = {}; $('#qz-score').textContent = 0;
+}
+$('#qz-list').addEventListener('click', e => {
+  const b = e.target.closest('.opt'); if (!b) return;
+  const card = b.closest('.q'), i = +card.dataset.i, j = +b.dataset.j;
+  if (i in qzAnswered) return;
+  qzAnswered[i] = j === QUIZ[i].a;
+  $$('.opt', card).forEach((o, k) => { o.disabled = true; if (k === QUIZ[i].a) o.classList.add('right'); else if (k === j) o.classList.add('wrong'); });
+  const ex = $('.explain', card); ex.hidden = false;
+  ex.innerHTML = (qzAnswered[i] ? '⭕ 정답! ' : '❌ 아쉬워요. ') + QUIZ[i].e;
+  const score = Object.values(qzAnswered).filter(Boolean).length;
+  $('#qz-score').textContent = score;
+  if (qzAnswered[i]) confetti(8, ['⭕', '✨', '🪙']);
+  if (Object.keys(qzAnswered).length === QUIZ.length) confetti(score === QUIZ.length ? 60 : 25);
+});
+$('#qz-reset').addEventListener('click', renderQuiz);
+renderQuiz();
+
+// 활동지 자동 저장 (이 브라우저에만)
+const WS_KEY = 'pension-class-worksheet-v1';
+function wsLoad() {
+  try {
+    const d = JSON.parse(localStorage.getItem(WS_KEY) || '{}');
+    ['ws1', 'ws2', 'ws3', 'ws4', 'qz-name'].forEach(id => { if (d[id]) $('#' + id).value = d[id]; });
+  } catch (e) { /* 저장소 사용 불가 시 무시 */ }
+  updName();
+}
+function wsSave() {
+  try {
+    const d = {}; ['ws1', 'ws2', 'ws3', 'ws4', 'qz-name'].forEach(id => { d[id] = $('#' + id).value; });
+    localStorage.setItem(WS_KEY, JSON.stringify(d));
+  } catch (e) { /* 무시 */ }
+}
+function updName() { const n = $('#qz-name').value.trim(); $('#qz-print-name').textContent = n ? n : '이름: ________'; }
+['ws1', 'ws2', 'ws3', 'ws4', 'qz-name'].forEach(id => $('#' + id).addEventListener('input', () => { wsSave(); updName(); }));
+// 인쇄 때는 입력칸 대신 글 전체를 보여주는 상자를 사용 (긴 답도 잘리지 않게)
+function syncPrint() { ['ws1', 'ws2', 'ws3', 'ws4'].forEach(id => { $('#' + id + '-print').textContent = $('#' + id).value; }); updName(); }
+window.addEventListener('beforeprint', syncPrint);
+$('#ws-print').addEventListener('click', () => { syncPrint(); window.print(); });
+wsLoad();
+
+/* 시작 탭 (주소의 #해시 지원) */
+paintAllRanges();
+showTab((location.hash || '#home').slice(1), false);
+</script>
+</body>
+</html>
